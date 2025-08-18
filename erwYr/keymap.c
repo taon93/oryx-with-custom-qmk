@@ -28,7 +28,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TRANSPARENT, KC_V,           KC_L,           KC_H,           KC_K,           KC_Q,                                           KC_J,           KC_F,           KC_O,           KC_U,           KC_QUOTE,       QK_DYNAMIC_TAPPING_TERM_PRINT,
     KC_TRANSPARENT, MT(MOD_LCTL, KC_S),MT(MOD_LALT, KC_R),MT(MOD_LSFT, KC_N),MT(MOD_LGUI, KC_T),KC_W,                                           KC_Y,           MT(MOD_RGUI, KC_C),MT(MOD_RSFT, KC_A),MT(MOD_RALT, KC_E),MT(MOD_RCTL, KC_I),QK_DYNAMIC_TAPPING_TERM_UP,
     KC_TRANSPARENT, KC_Z,           KC_X,           KC_M,           KC_D,           KC_B,                                           KC_P,           KC_G,           KC_DOT,         KC_COMMA,       KC_SCLN,        QK_DYNAMIC_TAPPING_TERM_DOWN,
-                                                    OSL(2),         ALL_T(KC_ESCAPE),                                MEH_T(KC_SPACE),OSL(1)
+                                                    OSL(2),         ALL_T(KC_ESCAPE),                                MEH_T(KC_SPACE),TT(1)
   ),
   [1] = LAYOUT_voyager(
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
@@ -80,9 +80,10 @@ const uint16_t PROGMEM combo8[] = { KC_F, KC_9, COMBO_END};
 const uint16_t PROGMEM combo9[] = { KC_F, KC_0, COMBO_END};
 const uint16_t PROGMEM combo10[] = { KC_X, KC_M, COMBO_END};
 const uint16_t PROGMEM combo11[] = { KC_7, KC_4, COMBO_END};
-const uint16_t PROGMEM combo12[] = { OSL(1), OSL(2), COMBO_END};
-const uint16_t PROGMEM combo13[] = { KC_DOT, KC_COMMA, COMBO_END};
-const uint16_t PROGMEM combo14[] = { MT(MOD_LCTL, KC_S), MT(MOD_LALT, KC_R), MT(MOD_LSFT, KC_N), MT(MOD_LGUI, KC_T), COMBO_END};
+const uint16_t PROGMEM combo12[] = { KC_DOT, KC_COMMA, COMBO_END};
+const uint16_t PROGMEM combo13[] = { MT(MOD_LCTL, KC_S), MT(MOD_LALT, KC_R), MT(MOD_LSFT, KC_N), MT(MOD_LGUI, KC_T), COMBO_END};
+const uint16_t PROGMEM combo14[] = { MT(MOD_RGUI, KC_C), MT(MOD_RSFT, KC_A), MT(MOD_RALT, KC_E), MT(MOD_RCTL, KC_I), COMBO_END};
+const uint16_t PROGMEM combo15[] = { TT(1), OSL(2), COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo0, KC_F1),
@@ -97,9 +98,10 @@ combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo9, KC_F10),
     COMBO(combo10, KC_BSPC),
     COMBO(combo11, KC_BSPC),
-    COMBO(combo12, TG(3)),
-    COMBO(combo13, KC_TAB),
-    COMBO(combo14, CW_TOGG),
+    COMBO(combo12, KC_TAB),
+    COMBO(combo13, CW_TOGG),
+    COMBO(combo14, LGUI(LCTL(KC_Q))),
+    COMBO(combo15, TG(3)),
 };
 
 
@@ -117,7 +119,7 @@ void keyboard_post_init_user(void) {
 }
 
 const uint8_t PROGMEM ledmap[][RGB_MATRIX_LED_COUNT][3] = {
-    [0] = { {126,245,161}, {126,245,161}, {126,245,161}, {126,245,161}, {126,245,161}, {126,245,161}, {248,255,255}, {203,255,255}, {203,255,255}, {203,255,255}, {203,255,255}, {203,255,255}, {248,255,255}, {172,255,255}, {172,255,255}, {172,255,255}, {172,255,255}, {172,255,255}, {248,255,255}, {148,255,255}, {148,255,255}, {148,255,255}, {148,255,255}, {148,255,255}, {126,245,161}, {126,245,161}, {126,245,161}, {126,245,161}, {126,245,161}, {126,245,161}, {126,245,161}, {126,245,161}, {203,255,255}, {203,255,255}, {203,255,255}, {203,255,255}, {203,255,255}, {252,255,255}, {172,255,255}, {172,255,255}, {172,255,255}, {172,255,255}, {172,255,255}, {252,255,255}, {148,255,255}, {148,255,255}, {148,255,255}, {148,255,255}, {148,255,255}, {248,255,255}, {126,245,161}, {126,245,161} },
+    [0] = { {248,255,255}, {248,255,255}, {248,255,255}, {248,255,255}, {248,255,255}, {248,255,255}, {248,255,255}, {203,255,255}, {203,255,255}, {203,255,255}, {203,255,255}, {203,255,255}, {248,255,255}, {172,255,255}, {172,255,255}, {172,255,255}, {172,255,255}, {172,255,255}, {248,255,255}, {148,255,255}, {148,255,255}, {148,255,255}, {148,255,255}, {148,255,255}, {126,245,161}, {126,245,161}, {248,255,255}, {248,255,255}, {248,255,255}, {248,255,255}, {248,255,255}, {248,255,255}, {203,255,255}, {203,255,255}, {203,255,255}, {203,255,255}, {203,255,255}, {252,255,255}, {172,255,255}, {172,255,255}, {172,255,255}, {172,255,255}, {172,255,255}, {252,255,255}, {148,255,255}, {148,255,255}, {148,255,255}, {148,255,255}, {148,255,255}, {248,255,255}, {126,245,161}, {126,245,161} },
 
     [1] = { {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {77,5,246}, {217,226,214}, {217,226,214}, {217,226,214}, {0,0,0}, {0,0,0}, {217,226,214}, {217,226,214}, {217,226,214}, {217,226,214}, {0,0,0}, {0,0,0}, {77,5,246}, {217,226,214}, {217,226,214}, {217,226,214}, {77,5,246}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {189,249,188}, {189,249,188}, {189,249,188}, {189,249,188}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0} },
 
