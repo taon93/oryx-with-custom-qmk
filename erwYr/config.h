@@ -1,4 +1,3 @@
-#define FLOW_TAP_TERM 100
 #define CHORDAL_HOLD
 #undef DEBOUNCE
 #define DEBOUNCE 1
@@ -15,7 +14,7 @@
 #undef MOUSEKEY_MAX_SPEED
 #define MOUSEKEY_MAX_SPEED 9
 
-#define SERIAL_NUMBER "erwYr/DznXg7"
+#define SERIAL_NUMBER "erwYr/Ja4WgW"
 #define LAYER_STATE_8BIT
 #define COMBO_COUNT 16
 
