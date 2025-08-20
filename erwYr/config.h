@@ -2,6 +2,9 @@
 #undef DEBOUNCE
 #define DEBOUNCE 1
 
+#undef TAPPING_TERM
+#define TAPPING_TERM 310
+
 #define PERMISSIVE_HOLD
 
 #undef RGB_MATRIX_TIMEOUT
@@ -14,7 +17,7 @@
 #undef MOUSEKEY_MAX_SPEED
 #define MOUSEKEY_MAX_SPEED 9
 
-#define SERIAL_NUMBER "erwYr/x9DNpx"
+#define SERIAL_NUMBER "erwYr/OayNK9"
 #define LAYER_STATE_8BIT
 #define COMBO_COUNT 17
 
