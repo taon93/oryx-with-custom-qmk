@@ -17,7 +17,7 @@
 #undef MOUSEKEY_MAX_SPEED
 #define MOUSEKEY_MAX_SPEED 9
 
-#define SERIAL_NUMBER "erwYr/gaqWwa"
+#define SERIAL_NUMBER "erwYr/ZPD6wo"
 #define LAYER_STATE_8BIT
 #define COMBO_COUNT 8
 
