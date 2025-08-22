@@ -45,14 +45,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
     KC_TRANSPARENT, KC_TRANSPARENT, KC_9,           KC_6,           KC_3,           KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
     KC_TRANSPARENT, KC_0,           KC_8,           KC_5,           KC_2,           KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_RIGHT_GUI,   KC_RIGHT_ALT,   KC_RIGHT_CTRL,  KC_TRANSPARENT, KC_TRANSPARENT, 
-    KC_TRANSPARENT, KC_TRANSPARENT, KC_7,           KC_4,           KC_1,           KC_F11,                                         KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
+    KC_TRANSPARENT, KC_TRANSPARENT, KC_7,           KC_4,           KC_1,           KC_F11,                                         KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
                                                     TO(0),          KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_ESCAPE
   ),
   [2] = LAYOUT_voyager(
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_SLASH,       KC_LCBR,        KC_RCBR,        KC_TRANSPARENT, KC_TRANSPARENT, 
     KC_TRANSPARENT, KC_TRANSPARENT, KC_LEFT_CTRL,   KC_LEFT_ALT,    KC_LEFT_GUI,    KC_TRANSPARENT,                                 KC_QUES,        KC_UNDS,        KC_LPRN,        KC_RPRN,        KC_AT,          KC_TRANSPARENT, 
-    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_EQUAL,       KC_MINUS,       KC_AMPR,        KC_GRAVE,       KC_CIRC,        KC_TRANSPARENT, 
+    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_EQUAL,       KC_MINUS,       KC_AMPR,        KC_GRAVE,       KC_PERC,        KC_TRANSPARENT,
                                                     KC_ESCAPE,      KC_TRANSPARENT,                                 KC_TRANSPARENT, TO(0)
   ),
   [3] = LAYOUT_voyager(
@@ -100,8 +100,8 @@ const key_override_t brightness_up_override = ko_make_with_layers_negmods_and_op
                                       KC_BRIU, ~0, MOD_MASK_SHIFT, ko_option_no_reregister_trigger);
 const key_override_t brightness_down_override = ko_make_basic(MOD_MASK_CSA, KC_MPLY, KC_BRID);
 // Shifted symbols
-const key_override_t dot_perc_override     = ko_make_basic(MOD_MASK_SHIFT, KC_COMM, KC_PERC);
-const key_override_t comma_circ_override     = ko_make_basic(MOD_MASK_SHIFT, KC_DOT, KC_CIRC);
+const key_override_t perc_circ_override     = ko_make_basic(MOD_MASK_SHIFT, KC_PERC, KC_CIRC);
+const key_override_t comma_dot_override     = ko_make_basic(MOD_MASK_SHIFT, KC_DOT, KC_COMM);
 const key_override_t lprn_lbrc_override    = ko_make_basic(MOD_MASK_SHIFT, KC_LPRN, KC_LBRC);
 const key_override_t rprn_rbrc_override    = ko_make_basic(MOD_MASK_SHIFT, KC_RPRN, KC_RBRC);
 const key_override_t lcurly_labk_override   = ko_make_basic(MOD_MASK_SHIFT, KC_LCBR, KC_LABK);
@@ -117,6 +117,17 @@ const key_override_t under_dollar_override  = ko_make_basic(MOD_MASK_SHIFT, KC_U
 const key_override_t eq_plus_override       = ko_make_basic(MOD_MASK_SHIFT, KC_EQL, KC_PLUS);
 const key_override_t quot_dquot_override    = ko_make_basic(MOD_MASK_SHIFT, KC_QUOT, KC_DQUO);
 
+const key_override_t one_f1_override    = ko_make_basic(MOD_MASK_SHIFT, KC_1, KC_F1);
+const key_override_t two_f2_override    = ko_make_basic(MOD_MASK_SHIFT, KC_2, KC_F2);
+const key_override_t three_f3_override  = ko_make_basic(MOD_MASK_SHIFT, KC_3, KC_F3);
+const key_override_t four_f4_override   = ko_make_basic(MOD_MASK_SHIFT, KC_4, KC_F4);
+const key_override_t five_f5_override   = ko_make_basic(MOD_MASK_SHIFT, KC_5, KC_F5);
+const key_override_t six_f6_override    = ko_make_basic(MOD_MASK_SHIFT, KC_6, KC_F6);
+const key_override_t seven_f7_override  = ko_make_basic(MOD_MASK_SHIFT, KC_7, KC_F7);
+const key_override_t eight_f8_override  = ko_make_basic(MOD_MASK_SHIFT, KC_8, KC_F8);
+const key_override_t nine_f9_override   = ko_make_basic(MOD_MASK_SHIFT, KC_9, KC_F9);
+const key_override_t zero_f10_override   = ko_make_basic(MOD_MASK_SHIFT, KC_0, KC_F10);
+
 const key_override_t *key_overrides[] = {
     &delete_key_override,
 
@@ -129,8 +140,8 @@ const key_override_t *key_overrides[] = {
     &brightness_up_override,
     &brightness_down_override,
 
-    &dot_perc_override,
-    &comma_circ_override,
+    &comma_dot_override,
+    &perc_circ_override,
     &lprn_lbrc_override,
     &rprn_rbrc_override,
     &lcurly_labk_override,
@@ -145,6 +156,17 @@ const key_override_t *key_overrides[] = {
     &under_dollar_override,
     &eq_plus_override,
     &quot_dquot_override,
+
+    &one_f1_override,
+    &two_f2_override,
+    &three_f3_override,
+    &four_f4_override,
+    &five_f5_override,
+    &six_f6_override,
+    &seven_f7_override,
+    &eight_f8_override,
+    &nine_f9_override,
+    &zero_f10_override,
 
     &layer_1_enter_override,
     &layer_2_backspace_override,
