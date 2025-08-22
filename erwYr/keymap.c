@@ -16,8 +16,8 @@ enum custom_keycodes {
 
 
 
-#define DUAL_FUNC_0 LT(8, KC_F19)
-#define DUAL_FUNC_1 LT(8, KC_V)
+#define DUAL_FUNC_0 LT(2, KC_R)
+#define DUAL_FUNC_1 LT(5, KC_Q)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
@@ -67,6 +67,7 @@ const uint16_t PROGMEM combo5[] = { KC_F, KC_O, COMBO_END};
 const uint16_t PROGMEM combo6[] = { KC_H, KC_K, COMBO_END};
 const uint16_t PROGMEM combo7[] = { KC_M, KC_D, COMBO_END};
 const uint16_t PROGMEM combo8[] = { KC_L, KC_H, COMBO_END};
+const uint16_t PROGMEM combo9[] = { MT(MOD_LGUI, KC_T), MT(MOD_RGUI, KC_C), COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo0, KC_BSPC),
@@ -78,6 +79,7 @@ combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo6, OSM(MOD_HYPR)),
     COMBO(combo7, OSM(MOD_MEH)),
     COMBO(combo8, KC_TAB),
+    COMBO(combo9, KC_ESCAPE),
 };
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
