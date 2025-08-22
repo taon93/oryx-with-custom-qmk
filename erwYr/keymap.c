@@ -37,7 +37,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
     KC_TRANSPARENT, KC_TRANSPARENT, KC_L,           KC_H,           KC_K,           KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_F,           KC_O,           KC_U,           KC_TRANSPARENT, KC_TRANSPARENT, 
-    KC_TRANSPARENT, KC_S,           MT(MOD_LCTL, KC_R),MT(MOD_LALT, KC_N),MT(MOD_LGUI, KC_T),KC_W,                                           LT(1, KC_Y),    MT(MOD_RGUI, KC_C),MT(MOD_RALT, KC_A),MT(MOD_RCTL, KC_E),KC_I,           KC_TRANSPARENT, 
+    KC_TRANSPARENT, KC_S,           MT(MOD_LCTL, KC_R),MT(MOD_LALT, KC_N),MT(MOD_LGUI, KC_T),KC_W,                                           KC_Y,           MT(MOD_RGUI, KC_C),MT(MOD_RALT, KC_A),MT(MOD_RCTL, KC_E),KC_I,           KC_TRANSPARENT, 
     KC_TRANSPARENT, KC_V,           KC_X,           KC_M,           KC_D,           KC_B,                                           KC_P,           KC_G,           KC_Z,           KC_J,           KC_Q,           KC_TRANSPARENT, 
                                                     OSL(2),         KC_LEFT_SHIFT,                                  KC_SPACE,       OSL(1)
   ),
@@ -97,6 +97,8 @@ const uint16_t PROGMEM combo7[] = { KC_M, KC_D, COMBO_END};
 const uint16_t PROGMEM combo8[] = { KC_L, KC_H, COMBO_END};
 const uint16_t PROGMEM combo9[] = { MT(MOD_LGUI, KC_T), MT(MOD_RGUI, KC_C), COMBO_END};
 const uint16_t PROGMEM combo10[] = { MT(MOD_LALT, KC_N), MT(MOD_RALT, KC_A), COMBO_END};
+const uint16_t PROGMEM combo11[] = { MT(MOD_RGUI, KC_C), MT(MOD_RALT, KC_A), MT(MOD_RCTL, KC_E), KC_I, COMBO_END};
+const uint16_t PROGMEM combo12[] = { KC_S, MT(MOD_LCTL, KC_R), MT(MOD_LALT, KC_N), MT(MOD_LGUI, KC_T), COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo0, KC_BSPC),
@@ -110,6 +112,8 @@ combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo8, KC_TAB),
     COMBO(combo9, KC_ESCAPE),
     COMBO(combo10, OSL(4)),
+    COMBO(combo11, LGUI(LCTL(KC_Q))),
+    COMBO(combo12, CW_TOGG),
 };
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
@@ -124,7 +128,7 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
             return TAPPING_TERM -110;
         case KC_W:
             return TAPPING_TERM -160;
-        case LT(1, KC_Y):
+        case KC_Y:
             return TAPPING_TERM -160;
         case MT(MOD_RGUI, KC_C):
             return TAPPING_TERM -110;
