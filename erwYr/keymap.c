@@ -79,8 +79,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 const key_override_t delete_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_BSPC, KC_DEL);
-const key_override_t layer_1_enter_override = ko_make_basic(MOD_MASK_GUI, OSL(2), KC_ENTER);
-const key_override_t layer_2_backspace_override = ko_make_basic(MOD_MASK_GUI, OSL(1), KC_BSPC);
+const key_override_t layer_1_enter_override = ko_make_basic(MOD_MASK_GUI, OSL(1), KC_ENTER);
+const key_override_t layer_2_enter_override = ko_make_basic(MOD_MASK_GUI, OSL(2), KC_ENTER);
+const key_override_t layer_1_backspace_override = ko_make_basic(MOD_MASK_CTRL, OSL(1), KC_BSPC);
+const key_override_t layer_2_backspace_override = ko_make_basic(MOD_MASK_CTRL, OSL(2), KC_BSPC);
 const key_override_t caps_lock_ctrl_override = ko_make_basic(MOD_MASK_CTRL, CW_TOGG, KC_CAPS);
 const key_override_t next_track_override =
     ko_make_with_layers_negmods_and_options(
@@ -102,10 +104,10 @@ const key_override_t brightness_down_override = ko_make_basic(MOD_MASK_CSA, KC_M
 // Shifted symbols
 const key_override_t perc_circ_override     = ko_make_basic(MOD_MASK_SHIFT, KC_PERC, KC_CIRC);
 const key_override_t comma_dot_override     = ko_make_basic(MOD_MASK_SHIFT, KC_DOT, KC_COMM);
-const key_override_t lprn_lbrc_override    = ko_make_basic(MOD_MASK_SHIFT, KC_LPRN, KC_LBRC);
-const key_override_t rprn_rbrc_override    = ko_make_basic(MOD_MASK_SHIFT, KC_RPRN, KC_RBRC);
-const key_override_t lcurly_labk_override   = ko_make_basic(MOD_MASK_SHIFT, KC_LCBR, KC_LABK);
-const key_override_t rcurly_rabk_override   = ko_make_basic(MOD_MASK_SHIFT, KC_RCBR, KC_RABK);
+const key_override_t lprn_labk_override    = ko_make_basic(MOD_MASK_SHIFT, KC_LPRN, KC_LABK);
+const key_override_t rprn_rabk_override    = ko_make_basic(MOD_MASK_SHIFT, KC_RPRN, KC_RABK);
+const key_override_t lcurly_lbrc_override   = ko_make_basic(MOD_MASK_SHIFT, KC_LCBR, KC_LBRC);
+const key_override_t rcurly_rbrc_override   = ko_make_basic(MOD_MASK_SHIFT, KC_RCBR, KC_RBRC);
 const key_override_t grave_tilde_override   = ko_make_basic(MOD_MASK_SHIFT, KC_GRV, KC_TILD);
 const key_override_t slash_bslash_override  = ko_make_basic(MOD_MASK_SHIFT, KC_SLSH, KC_BSLS);
 const key_override_t amp_pipe_override      = ko_make_basic(MOD_MASK_SHIFT, KC_AMPR, KC_PIPE);
@@ -142,10 +144,10 @@ const key_override_t *key_overrides[] = {
 
     &comma_dot_override,
     &perc_circ_override,
-    &lprn_lbrc_override,
-    &rprn_rbrc_override,
-    &lcurly_labk_override,
-    &rcurly_rabk_override,
+    &lprn_labk_override,
+    &rprn_rabk_override,
+    &lcurly_lbrc_override,
+    &rcurly_rbrc_override,
     &grave_tilde_override,
     &slash_bslash_override,
     &amp_pipe_override,
@@ -168,8 +170,10 @@ const key_override_t *key_overrides[] = {
     &nine_f9_override,
     &zero_f10_override,
 
-    &layer_1_enter_override,
-    &layer_2_backspace_override,
+    layer_1_enter_override,
+    layer_2_enter_override,
+    layer_1_backspace_override,
+    layer_2_backspace_override
 };
 
 const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM = LAYOUT(
@@ -238,7 +242,34 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
             return TAPPING_TERM;
     }
 }
+bool process_repeat_key_user(uint16_t keycode, keyrecord_t *record) {
+    if (!record->event.pressed) {
+        return true; // only care about press
+    }
 
+    if (get_mods() & MOD_MASK_SHIFT) {
+        switch (keycode) {
+            case KC_PERC:   tap_code16(KC_CIRC); return false;
+            case KC_DOT:    tap_code16(KC_COMM); return false;
+            case KC_LPRN:   tap_code16(KC_LABK); return false;
+            case KC_RPRN:   tap_code16(KC_RABK); return false;
+            case KC_LCBR:   tap_code16(KC_LBRC); return false;
+            case KC_RCBR:   tap_code16(KC_RBRC); return false;
+            case KC_GRV:    tap_code16(KC_TILD); return false;
+            case KC_SLSH:   tap_code16(KC_BSLS); return false;
+            case KC_AMPR:   tap_code16(KC_PIPE); return false;
+            case KC_QUES:   tap_code16(KC_EXLM); return false;
+            case KC_SCLN:   tap_code16(KC_COLN); return false;
+            case KC_AT:     tap_code16(KC_HASH); return false;
+            case KC_MINS:   tap_code16(KC_ASTR); return false;
+            case KC_UNDS:   tap_code16(KC_DLR);  return false;
+            case KC_EQL:    tap_code16(KC_PLUS); return false;
+            case KC_QUOT:   tap_code16(KC_DQUO); return false;
+        }
+    }
+
+    return true; // fall back to default repeat
+}
 
 extern rgb_config_t rgb_matrix_config;
 
