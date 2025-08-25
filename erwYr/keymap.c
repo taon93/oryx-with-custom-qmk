@@ -170,10 +170,10 @@ const key_override_t *key_overrides[] = {
     &nine_f9_override,
     &zero_f10_override,
 
-    layer_1_enter_override,
-    layer_2_enter_override,
-    layer_1_backspace_override,
-    layer_2_backspace_override
+    &layer_1_enter_override,
+    &layer_2_enter_override,
+    &layer_1_backspace_override,
+    &layer_2_backspace_override
 };
 
 const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM = LAYOUT(
