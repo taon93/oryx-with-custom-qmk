@@ -247,15 +247,6 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
 static uint16_t last_keycode = KC_NO;
 static uint8_t  last_mods    = 0;
 
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    if (record->event.pressed) {
-        // Save key + currently active modifiers (normal + oneshot + weak mods)
-        last_keycode = keycode;
-        last_mods    = get_mods() | get_oneshot_mods() | get_weak_mods();
-    }
-    return true; // let QMK handle key normally
-}
-
 bool process_repeat_key_user(uint16_t keycode, keyrecord_t *record) {
     if (!record->event.pressed || last_keycode == KC_NO) {
         return true; // nothing to do
@@ -360,10 +351,6 @@ bool rgb_matrix_indicators_user(void) {
 
   return true;
 }
-
-
-
-
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   if (record->event.pressed) {
