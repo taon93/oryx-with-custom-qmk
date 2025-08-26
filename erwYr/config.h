@@ -19,7 +19,7 @@
 
 #define SERIAL_NUMBER "erwYr/eadWOW"
 #define LAYER_STATE_8BIT
-#define COMBO_COUNT 12
+#define COMBO_COUNT 13
 
 #define TAPPING_TERM_PER_KEY
 #define RGB_MATRIX_STARTUP_SPD 60
