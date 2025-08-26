@@ -366,6 +366,11 @@ bool rgb_matrix_indicators_user(void) {
 
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+  if (record->event.pressed) {
+          // Save key + currently active modifiers (normal + oneshot + weak mods)
+          last_keycode = keycode;
+          last_mods    = get_mods() | get_oneshot_mods() | get_weak_mods();
+      }
   switch (keycode) {
     case ST_MACRO_0:
     if (record->event.pressed) {
