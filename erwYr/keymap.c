@@ -1,5 +1,4 @@
 #include QMK_KEYBOARD_H
-#include "keyoverride.h"
 #include "version.h"
 #define MOON_LED_LEVEL LED_LEVEL
 #ifndef ZSA_SAFE_RANGE
@@ -277,14 +276,8 @@ bool process_repeat_key_user(uint16_t keycode, keyrecord_t *record) {
     del_weak_mods(MOD_MASK_CSAG);
     send_keyboard_report(); // apply mods immediately
 
-    // --- Let override table decide the final key ---
-    keyrecord_t fake = {0};
-    fake.event.pressed = true;
-    const key_override_t *ko = key_override_process_record(last_keycode, &fake);
-    uint16_t final_kc = ko ? ko->replacement : last_keycode;
-
     // --- Send the key with the stored modifiers applied ---
-    tap_code16(final_kc);
+    tap_code16(last_keycode);
 
     // --- Restore previous modifier state ---
     set_mods(saved_mods);
