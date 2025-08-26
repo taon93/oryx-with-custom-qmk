@@ -81,6 +81,9 @@ const key_override_t layer_1_escape_override = ko_make_basic(MOD_MASK_ALT, OSL(1
 const key_override_t layer_2_escape_override = ko_make_basic(MOD_MASK_ALT, OSL(2), KC_ESCAPE);
 const key_override_t caps_lock_ctrl_override = ko_make_basic(MOD_MASK_CTRL, CW_TOGG, KC_CAPS);
 
+const key_override_t layer_0_enter_override = ko_make_basic(MOD_MASK_GUI, TO(0), KC_ENTER);
+const key_override_t layer_0_backspace_override = ko_make_basic(MOD_MASK_CTRL,TO(0), KC_BSPC);
+const key_override_t layer_0_escape_override = ko_make_basic(MOD_MASK_ALT, TO(0), KC_ESCAPE);
 const key_override_t next_track_override =
     ko_make_with_layers_negmods_and_options(
        MOD_MASK_CTRL,       // Trigger modifiers: ctrl
@@ -172,7 +175,11 @@ const key_override_t *key_overrides[] = {
     &layer_1_backspace_override,
     &layer_2_backspace_override,
     &layer_1_escape_override,
-    &layer_2_escape_override
+    &layer_2_escape_override,
+
+    &layer_0_escape_override,
+    &layer_0_backspace_override,
+    &layer_0_enter_override
 };
 
 const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM = LAYOUT(
