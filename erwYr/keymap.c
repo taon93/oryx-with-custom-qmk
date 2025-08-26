@@ -242,33 +242,58 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
             return TAPPING_TERM;
     }
 }
+
+// ===== Storage for last pressed key + modifiers =====
+static uint16_t last_keycode = KC_NO;
+static uint8_t  last_mods    = 0;
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    if (record->event.pressed) {
+        // Save key + currently active modifiers (normal + oneshot + weak mods)
+        last_keycode = keycode;
+        last_mods    = get_mods() | get_oneshot_mods() | get_weak_mods();
+    }
+    return true; // let QMK handle key normally
+}
+
 bool process_repeat_key_user(uint16_t keycode, keyrecord_t *record) {
-    if (!record->event.pressed) {
-        return true; // only care about press
+    if (!record->event.pressed || last_keycode == KC_NO) {
+        return true; // nothing to do
     }
 
-    if (get_mods() & MOD_MASK_SHIFT) {
-        switch (keycode) {
-            case KC_PERC:   tap_code16(KC_CIRC); return false;
-            case KC_DOT:    tap_code16(KC_COMM); return false;
-            case KC_LPRN:   tap_code16(KC_LABK); return false;
-            case KC_RPRN:   tap_code16(KC_RABK); return false;
-            case KC_LCBR:   tap_code16(KC_LBRC); return false;
-            case KC_RCBR:   tap_code16(KC_RBRC); return false;
-            case KC_GRV:    tap_code16(KC_TILD); return false;
-            case KC_SLSH:   tap_code16(KC_BSLS); return false;
-            case KC_AMPR:   tap_code16(KC_PIPE); return false;
-            case KC_QUES:   tap_code16(KC_EXLM); return false;
-            case KC_SCLN:   tap_code16(KC_COLN); return false;
-            case KC_AT:     tap_code16(KC_HASH); return false;
-            case KC_MINS:   tap_code16(KC_ASTR); return false;
-            case KC_UNDS:   tap_code16(KC_DLR);  return false;
-            case KC_EQL:    tap_code16(KC_PLUS); return false;
-            case KC_QUOT:   tap_code16(KC_DQUO); return false;
-        }
-    }
+    // --- Save the current mods to restore later ---
+    uint8_t saved_mods = get_mods();
+#ifdef ONESHOT_MODS_ENABLE
+    uint8_t saved_oneshot = get_oneshot_mods();
+#endif
+    uint8_t saved_weak = get_weak_mods();
 
-    return true; // fall back to default repeat
+    // --- Apply stored modifiers from last press ---
+    set_mods(last_mods);
+#ifdef ONESHOT_MODS_ENABLE
+    clear_oneshot_mods();
+#endif
+    del_weak_mods(MOD_MASK_CSAG);
+    send_keyboard_report(); // apply mods immediately
+
+    // --- Let override table decide the final key ---
+    keyrecord_t fake = {0};
+    fake.event.pressed = true;
+    const key_override_t *ko = key_override_process_record(last_keycode, &fake);
+    uint16_t final_kc = ko ? ko->replacement : last_keycode;
+
+    // --- Send the key with the stored modifiers applied ---
+    tap_code16(final_kc);
+
+    // --- Restore previous modifier state ---
+    set_mods(saved_mods);
+#ifdef ONESHOT_MODS_ENABLE
+    set_oneshot_mods(saved_oneshot);
+#endif
+    add_weak_mods(saved_weak);
+    send_keyboard_report();
+
+    return false; // handled by us
 }
 
 extern rgb_config_t rgb_matrix_config;
