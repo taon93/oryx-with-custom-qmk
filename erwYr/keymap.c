@@ -27,6 +27,12 @@ enum custom_keycodes {
 
 
 
+#define DUAL_FUNC_0 LT(8, KC_F4)
+#define DUAL_FUNC_1 LT(1, KC_V)
+#define DUAL_FUNC_2 LT(11, KC_B)
+#define DUAL_FUNC_3 LT(5, KC_F13)
+#define DUAL_FUNC_4 LT(7, KC_5)
+#define DUAL_FUNC_5 LT(13, KC_1)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
@@ -46,9 +52,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [2] = LAYOUT_voyager(
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
     KC_TRANSPARENT, KC_TRANSPARENT, KC_LBRC,        KC_LABK,        KC_BSLS,        KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_SLASH,       KC_RABK,        KC_RBRC,        KC_TRANSPARENT, KC_TRANSPARENT, 
-    KC_TRANSPARENT, KC_HASH,        KC_LCBR,        KC_LPRN,        KC_DLR,         KC_EXLM,                                        KC_QUES,        KC_UNDS,        KC_RPRN,        KC_RCBR,        KC_AT,          KC_TRANSPARENT, 
+    KC_TRANSPARENT, KC_HASH,        DUAL_FUNC_0,    DUAL_FUNC_1,    DUAL_FUNC_2,    KC_EXLM,                                        KC_QUES,        DUAL_FUNC_3,    DUAL_FUNC_4,    DUAL_FUNC_5,    KC_AT,          KC_TRANSPARENT, 
     KC_TRANSPARENT, KC_CIRC,        KC_TILD,        KC_PIPE,        KC_ASTR,        KC_PLUS,                                        KC_EQUAL,       KC_MINUS,       KC_AMPR,        KC_GRAVE,       KC_PERC,        KC_TRANSPARENT, 
-                                                    KC_ESCAPE,      KC_TRANSPARENT,                                 KC_TRANSPARENT, TO(0)
+                                                    TO(0),          KC_TRANSPARENT,                                 KC_TRANSPARENT, TO(0)
   ),
   [3] = LAYOUT_voyager(
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
@@ -85,6 +91,7 @@ const uint16_t PROGMEM combo7[] = { KC_L, KC_H, COMBO_END};
 const uint16_t PROGMEM combo8[] = { MT(MOD_RGUI, KC_C), MT(MOD_RALT, KC_A), MT(MOD_RCTL, KC_E), KC_I, COMBO_END};
 const uint16_t PROGMEM combo9[] = { KC_S, MT(MOD_LCTL, KC_R), MT(MOD_LALT, KC_N), MT(MOD_LGUI, KC_T), COMBO_END};
 const uint16_t PROGMEM combo10[] = { OSL(2), TT(1), COMBO_END};
+const uint16_t PROGMEM combo11[] = { OSM(MOD_LSFT), KC_SPACE, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo0, KC_BSPC),
@@ -98,6 +105,7 @@ combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo8, LGUI(LCTL(KC_Q))),
     COMBO(combo9, CW_TOGG),
     COMBO(combo10, OSL(3)),
+    COMBO(combo11, OSL(4)),
 };
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
@@ -122,6 +130,24 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
             return TAPPING_TERM -60;
         case KC_I:
             return TAPPING_TERM -60;
+        case MT(MOD_RCTL, KC_8):
+            return TAPPING_TERM -100;
+        case MT(MOD_RALT, KC_5):
+            return TAPPING_TERM -110;
+        case MT(MOD_RGUI, KC_2):
+            return TAPPING_TERM -110;
+        case DUAL_FUNC_0:
+            return TAPPING_TERM -100;
+        case DUAL_FUNC_1:
+            return TAPPING_TERM -110;
+        case DUAL_FUNC_2:
+            return TAPPING_TERM -110;
+        case DUAL_FUNC_3:
+            return TAPPING_TERM -110;
+        case DUAL_FUNC_4:
+            return TAPPING_TERM -110;
+        case DUAL_FUNC_5:
+            return TAPPING_TERM -100;
         default:
             return TAPPING_TERM;
     }
@@ -281,6 +307,96 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     }
     break;
 
+    case DUAL_FUNC_0:
+      if (record->tap.count > 0) {
+        if (record->event.pressed) {
+          register_code16(KC_LCBR);
+        } else {
+          unregister_code16(KC_LCBR);
+        }
+      } else {
+        if (record->event.pressed) {
+          register_code16(KC_LEFT_CTRL);
+        } else {
+          unregister_code16(KC_LEFT_CTRL);
+        }  
+      }  
+      return false;
+    case DUAL_FUNC_1:
+      if (record->tap.count > 0) {
+        if (record->event.pressed) {
+          register_code16(KC_LPRN);
+        } else {
+          unregister_code16(KC_LPRN);
+        }
+      } else {
+        if (record->event.pressed) {
+          register_code16(KC_LEFT_ALT);
+        } else {
+          unregister_code16(KC_LEFT_ALT);
+        }  
+      }  
+      return false;
+    case DUAL_FUNC_2:
+      if (record->tap.count > 0) {
+        if (record->event.pressed) {
+          register_code16(KC_DLR);
+        } else {
+          unregister_code16(KC_DLR);
+        }
+      } else {
+        if (record->event.pressed) {
+          register_code16(KC_LEFT_GUI);
+        } else {
+          unregister_code16(KC_LEFT_GUI);
+        }  
+      }  
+      return false;
+    case DUAL_FUNC_3:
+      if (record->tap.count > 0) {
+        if (record->event.pressed) {
+          register_code16(KC_UNDS);
+        } else {
+          unregister_code16(KC_UNDS);
+        }
+      } else {
+        if (record->event.pressed) {
+          register_code16(KC_RIGHT_GUI);
+        } else {
+          unregister_code16(KC_RIGHT_GUI);
+        }  
+      }  
+      return false;
+    case DUAL_FUNC_4:
+      if (record->tap.count > 0) {
+        if (record->event.pressed) {
+          register_code16(KC_RPRN);
+        } else {
+          unregister_code16(KC_RPRN);
+        }
+      } else {
+        if (record->event.pressed) {
+          register_code16(KC_RIGHT_ALT);
+        } else {
+          unregister_code16(KC_RIGHT_ALT);
+        }  
+      }  
+      return false;
+    case DUAL_FUNC_5:
+      if (record->tap.count > 0) {
+        if (record->event.pressed) {
+          register_code16(KC_RCBR);
+        } else {
+          unregister_code16(KC_RCBR);
+        }
+      } else {
+        if (record->event.pressed) {
+          register_code16(KC_RIGHT_CTRL);
+        } else {
+          unregister_code16(KC_RIGHT_CTRL);
+        }  
+      }  
+      return false;
     case RGB_SLD:
       if (record->event.pressed) {
         rgblight_mode(1);
