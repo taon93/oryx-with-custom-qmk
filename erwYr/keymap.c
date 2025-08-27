@@ -73,11 +73,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 const key_override_t delete_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_BSPC, KC_DEL);
-const key_override_t layer_1_enter_override = ko_make_basic(MOD_MASK_GUI, OSL(1), KC_ENTER);
+const key_override_t layer_1_enter_override = ko_make_basic(MOD_MASK_GUI, TT(1), KC_ENTER);
 const key_override_t layer_2_enter_override = ko_make_basic(MOD_MASK_GUI, OSL(2), KC_ENTER);
-const key_override_t layer_1_backspace_override = ko_make_basic(MOD_MASK_CTRL, OSL(1), KC_BSPC);
+const key_override_t layer_1_backspace_override = ko_make_basic(MOD_MASK_CTRL, TT(1), KC_BSPC);
 const key_override_t layer_2_backspace_override = ko_make_basic(MOD_MASK_CTRL, OSL(2), KC_BSPC);
-const key_override_t layer_1_escape_override = ko_make_basic(MOD_MASK_ALT, OSL(1), KC_ESCAPE);
+const key_override_t layer_1_escape_override = ko_make_basic(MOD_MASK_ALT, TT(1), KC_ESCAPE);
 const key_override_t layer_2_escape_override = ko_make_basic(MOD_MASK_ALT, OSL(2), KC_ESCAPE);
 const key_override_t caps_lock_ctrl_override = ko_make_basic(MOD_MASK_CTRL, CW_TOGG, KC_CAPS);
 
