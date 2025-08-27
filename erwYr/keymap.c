@@ -200,7 +200,7 @@ const uint16_t PROGMEM combo6[] = { KC_M, KC_D, COMBO_END};
 const uint16_t PROGMEM combo7[] = { KC_L, KC_H, COMBO_END};
 const uint16_t PROGMEM combo8[] = { MT(MOD_RGUI, KC_C), MT(MOD_RALT, KC_A), MT(MOD_RCTL, KC_E), KC_I, COMBO_END};
 const uint16_t PROGMEM combo9[] = { KC_S, MT(MOD_LCTL, KC_R), MT(MOD_LALT, KC_N), MT(MOD_LGUI, KC_T), COMBO_END};
-const uint16_t PROGMEM combo10[] = { OSL(2), TT(1), COMBO_END};
+const uint16_t PROGMEM combo10[] = { OSL(2), OSL(1), COMBO_END};
 const uint16_t PROGMEM combo11[] = { OSM(MOD_LSFT), KC_SPACE, COMBO_END};
 const uint16_t PROGMEM combo12[] = { KC_F, KC_K, COMBO_END};
 
