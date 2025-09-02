@@ -7,6 +7,8 @@
 
 #define PERMISSIVE_HOLD
 
+#define COMBO_TERM 40
+
 #undef RGB_MATRIX_TIMEOUT
 #define RGB_MATRIX_TIMEOUT 300000
 
@@ -17,9 +19,9 @@
 #undef MOUSEKEY_MAX_SPEED
 #define MOUSEKEY_MAX_SPEED 9
 
-#define SERIAL_NUMBER "erwYr/WvzgE4"
+#define SERIAL_NUMBER "erwYr/ead0AW"
 #define LAYER_STATE_8BIT
-#define COMBO_COUNT 13
+#define COMBO_COUNT 15
 
 #define TAPPING_TERM_PER_KEY
 #define RGB_MATRIX_STARTUP_SPD 60
