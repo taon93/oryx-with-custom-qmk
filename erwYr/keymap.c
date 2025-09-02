@@ -33,12 +33,12 @@ enum custom_keycodes {
 
 
 
-#define DUAL_FUNC_0 LT(1, KC_F8)
-#define DUAL_FUNC_1 LT(15, KC_F6)
-#define DUAL_FUNC_2 LT(11, KC_F4)
-#define DUAL_FUNC_3 LT(1, KC_Q)
-#define DUAL_FUNC_4 LT(12, KC_5)
-#define DUAL_FUNC_5 LT(4, KC_5)
+#define DUAL_FUNC_0 LT(6, KC_W)
+#define DUAL_FUNC_1 LT(2, KC_7)
+#define DUAL_FUNC_2 LT(15, KC_O)
+#define DUAL_FUNC_3 LT(11, KC_F21)
+#define DUAL_FUNC_4 LT(15, KC_L)
+#define DUAL_FUNC_5 LT(1, KC_Z)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
@@ -57,7 +57,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   [2] = LAYOUT_voyager(
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
-    KC_TRANSPARENT, KC_TRANSPARENT, KC_LBRC,        KC_RBRC,        KC_BSLS,        KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_SLASH,       KC_LABK,        KC_RABK,        KC_TRANSPARENT, KC_TRANSPARENT,
+    KC_TRANSPARENT, KC_TRANSPARENT, KC_RBRC,        KC_LBRC,        KC_BSLS,        KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_SLASH,       KC_LABK,        KC_RABK,        KC_TRANSPARENT, KC_TRANSPARENT,
     KC_TRANSPARENT, KC_HASH,        DUAL_FUNC_0,    DUAL_FUNC_1,    DUAL_FUNC_2,    KC_EXLM,                                        KC_QUES,        DUAL_FUNC_3,    DUAL_FUNC_4,    DUAL_FUNC_5,    KC_AT,          KC_TRANSPARENT, 
     KC_TRANSPARENT, KC_CIRC,        KC_TILD,        KC_PIPE,        KC_ASTR,        KC_PLUS,                                        KC_EQUAL,       KC_MINUS,       KC_AMPR,        KC_GRAVE,       KC_PERC,        KC_TRANSPARENT, 
                                                     TO(0),          KC_TRANSPARENT,                                 KC_TRANSPARENT, TO(0)
@@ -199,31 +199,37 @@ const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM = LAYOUT(
 const uint16_t PROGMEM combo0[] = { KC_7, KC_4, COMBO_END};
 const uint16_t PROGMEM combo1[] = { KC_X, KC_M, COMBO_END};
 const uint16_t PROGMEM combo2[] = { KC_Z, KC_J, COMBO_END};
-const uint16_t PROGMEM combo3[] = { KC_G, KC_Z, COMBO_END};
-const uint16_t PROGMEM combo4[] = { KC_F, KC_O, COMBO_END};
-const uint16_t PROGMEM combo5[] = { KC_H, KC_K, COMBO_END};
-const uint16_t PROGMEM combo6[] = { KC_M, KC_D, COMBO_END};
-const uint16_t PROGMEM combo7[] = { KC_L, KC_H, COMBO_END};
-const uint16_t PROGMEM combo8[] = { MT(MOD_RGUI, KC_C), MT(MOD_RALT, KC_A), MT(MOD_RCTL, KC_E), KC_I, COMBO_END};
-const uint16_t PROGMEM combo9[] = { KC_S, MT(MOD_LCTL, KC_R), MT(MOD_LALT, KC_N), MT(MOD_LGUI, KC_T), COMBO_END};
+const uint16_t PROGMEM combo3[] = { KC_F, KC_O, COMBO_END};
+const uint16_t PROGMEM combo4[] = { KC_H, KC_K, COMBO_END};
+const uint16_t PROGMEM combo5[] = { KC_M, KC_D, COMBO_END};
+const uint16_t PROGMEM combo6[] = { KC_L, KC_H, COMBO_END};
+const uint16_t PROGMEM combo7[] = { MT(MOD_RGUI, KC_C), MT(MOD_RCTL, KC_E), MT(MOD_RALT, KC_A), COMBO_END};
+const uint16_t PROGMEM combo8[] = { MT(MOD_LCTL, KC_R), MT(MOD_LALT, KC_N), MT(MOD_LGUI, KC_T), COMBO_END};
+const uint16_t PROGMEM combo9[] = { OSM(MOD_LSFT), KC_SPACE, COMBO_END};
 const uint16_t PROGMEM combo10[] = { OSL(2), OSL(1), COMBO_END};
-const uint16_t PROGMEM combo11[] = { OSM(MOD_LSFT), KC_SPACE, COMBO_END};
-const uint16_t PROGMEM combo12[] = { KC_F, KC_K, COMBO_END};
+const uint16_t PROGMEM combo11[] = { MT(MOD_RGUI, KC_C), MT(MOD_RALT, KC_A), COMBO_END};
+const uint16_t PROGMEM combo12[] = { MT(MOD_RALT, KC_A), MT(MOD_RCTL, KC_E), COMBO_END};
+const uint16_t PROGMEM combo13[] = { KC_G, KC_Z, COMBO_END};
+const uint16_t PROGMEM combo14[] = { KC_O, KC_U, COMBO_END};
+const uint16_t PROGMEM combo15[] = { KC_F, KC_K, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo0, KC_BSPC),
     COMBO(combo1, KC_BSPC),
     COMBO(combo2, KC_SCLN),
-    COMBO(combo3, KC_DOT),
-    COMBO(combo4, KC_QUOTE),
-    COMBO(combo5, OSM(MOD_HYPR)),
-    COMBO(combo6, OSM(MOD_MEH)),
-    COMBO(combo7, KC_TAB),
-    COMBO(combo8, LGUI(LCTL(KC_Q))),
-    COMBO(combo9, CW_TOGG),
+    COMBO(combo3, KC_QUOTE),
+    COMBO(combo4, OSM(MOD_HYPR)),
+    COMBO(combo5, OSM(MOD_MEH)),
+    COMBO(combo6, KC_TAB),
+    COMBO(combo7, LGUI(LCTL(KC_Q))),
+    COMBO(combo8, CW_TOGG),
+    COMBO(combo9, OSL(4)),
     COMBO(combo10, OSL(3)),
-    COMBO(combo11, OSL(4)),
-    COMBO(combo12, QK_REP),
+    COMBO(combo11, KC_DOT),
+    COMBO(combo12, KC_COMMA),
+    COMBO(combo13, KC_COLN),
+    COMBO(combo14, KC_DQUO),
+    COMBO(combo15, QK_REP),
 };
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
@@ -322,11 +328,11 @@ void keyboard_post_init_user(void) {
 }
 
 const uint8_t PROGMEM ledmap[][RGB_MATRIX_LED_COUNT][3] = {
-    [0] = { {167,255,87}, {167,255,87}, {167,255,87}, {167,255,87}, {167,255,87}, {167,255,87}, {167,255,87}, {167,255,87}, {164,182,183}, {164,182,183}, {164,182,183}, {167,255,87}, {167,255,87}, {39,255,255}, {39,255,255}, {39,255,255}, {39,255,255}, {164,182,183}, {167,255,87}, {164,182,183}, {164,182,183}, {164,182,183}, {164,182,183}, {157,140,193}, {39,255,255}, {39,255,255}, {167,255,87}, {167,255,87}, {167,255,87}, {167,255,87}, {167,255,87}, {167,255,87}, {167,255,87}, {164,182,183}, {164,182,183}, {164,182,183}, {167,255,87}, {167,255,87}, {164,182,183}, {39,255,255}, {39,255,255}, {39,255,255}, {39,255,255}, {167,255,87}, {164,182,183}, {164,182,183}, {164,182,183}, {164,182,183}, {164,182,183}, {167,255,87}, {39,255,255}, {39,255,255} },
+    [0] = { {167,255,87}, {167,255,87}, {167,255,87}, {167,255,87}, {167,255,87}, {167,255,87}, {167,255,87}, {167,255,87}, {164,182,183}, {164,182,183}, {164,182,183}, {167,255,87}, {167,255,87}, {164,182,183}, {39,255,255}, {39,255,255}, {39,255,255}, {164,182,183}, {167,255,87}, {164,182,183}, {164,182,183}, {164,182,183}, {164,182,183}, {157,140,193}, {39,255,255}, {39,255,255}, {167,255,87}, {167,255,87}, {167,255,87}, {167,255,87}, {167,255,87}, {167,255,87}, {167,255,87}, {164,182,183}, {164,182,183}, {164,182,183}, {167,255,87}, {167,255,87}, {164,182,183}, {39,255,255}, {39,255,255}, {39,255,255}, {164,182,183}, {167,255,87}, {164,182,183}, {164,182,183}, {164,182,183}, {164,182,183}, {164,182,183}, {167,255,87}, {39,255,255}, {39,255,255} },
 
     [1] = { {153,255,77}, {153,255,77}, {153,255,77}, {153,255,77}, {153,255,77}, {153,255,77}, {153,255,77}, {153,255,77}, {245,221,160}, {230,216,93}, {230,216,93}, {230,216,93}, {153,255,77}, {249,223,255}, {230,216,93}, {230,216,93}, {230,216,93}, {153,255,77}, {153,255,77}, {153,255,77}, {230,216,93}, {230,216,93}, {230,216,93}, {230,216,93}, {230,216,93}, {230,216,93}, {153,255,77}, {153,255,77}, {153,255,77}, {153,255,77}, {153,255,77}, {153,255,77}, {153,255,77}, {36,185,246}, {222,222,165}, {222,222,165}, {153,255,77}, {153,255,77}, {222,222,165}, {36,185,246}, {36,185,246}, {36,185,246}, {36,185,246}, {153,255,77}, {222,222,165}, {217,210,255}, {222,222,165}, {222,222,165}, {153,255,77}, {153,255,77}, {36,185,246}, {36,185,246} },
 
-    [2] = { {177,147,204}, {177,147,204}, {177,147,204}, {177,147,204}, {177,147,204}, {177,147,204}, {177,147,204}, {177,147,204}, {163,15,255}, {163,15,255}, {163,15,255}, {177,147,204}, {177,147,204}, {117,233,245}, {117,233,245}, {117,233,245}, {117,233,245}, {163,15,255}, {177,147,204}, {163,15,255}, {163,15,255}, {163,15,255}, {163,15,255}, {163,15,255}, {117,233,245}, {117,233,245}, {177,147,204}, {177,147,204}, {177,147,204}, {177,147,204}, {177,147,204}, {177,147,204}, {177,147,204}, {163,15,255}, {163,15,255}, {163,15,255}, {177,147,204}, {177,147,204}, {163,15,255}, {117,233,245}, {117,233,245}, {117,233,245}, {117,233,245}, {177,147,204}, {163,15,255}, {163,15,255}, {163,15,255}, {163,15,255}, {163,15,255}, {177,147,204}, {117,233,245}, {117,233,245} },
+    [2] = { {177,147,204}, {177,147,204}, {177,147,204}, {177,147,204}, {177,147,204}, {177,147,204}, {177,147,204}, {177,147,204}, {163,15,255}, {163,15,255}, {163,15,255}, {177,147,204}, {177,147,204}, {163,15,255}, {117,233,245}, {117,233,245}, {117,233,245}, {163,15,255}, {177,147,204}, {163,15,255}, {163,15,255}, {163,15,255}, {163,15,255}, {163,15,255}, {117,233,245}, {117,233,245}, {177,147,204}, {177,147,204}, {177,147,204}, {177,147,204}, {177,147,204}, {177,147,204}, {177,147,204}, {163,15,255}, {163,15,255}, {163,15,255}, {177,147,204}, {177,147,204}, {163,15,255}, {117,233,245}, {117,233,245}, {117,233,245}, {163,15,255}, {177,147,204}, {163,15,255}, {163,15,255}, {163,15,255}, {163,15,255}, {163,15,255}, {177,147,204}, {117,233,245}, {117,233,245} },
 
 };
 
@@ -496,9 +502,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case DUAL_FUNC_0:
       if (record->tap.count > 0) {
         if (record->event.pressed) {
-          register_code16(KC_LPRN);
+          register_code16(KC_RPRN);
         } else {
-          unregister_code16(KC_LPRN);
+          unregister_code16(KC_RPRN);
         }
       } else {
         if (record->event.pressed) {
@@ -511,9 +517,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case DUAL_FUNC_1:
       if (record->tap.count > 0) {
         if (record->event.pressed) {
-          register_code16(KC_RPRN);
+          register_code16(KC_LPRN);
         } else {
-          unregister_code16(KC_RPRN);
+          unregister_code16(KC_LPRN);
         }
       } else {
         if (record->event.pressed) {

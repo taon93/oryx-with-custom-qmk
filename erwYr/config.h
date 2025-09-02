@@ -21,7 +21,7 @@
 
 #define SERIAL_NUMBER "erwYr/ead0AW"
 #define LAYER_STATE_8BIT
-#define COMBO_COUNT 15
+#define COMBO_COUNT 16
 
 #define TAPPING_TERM_PER_KEY
 #define RGB_MATRIX_STARTUP_SPD 60
