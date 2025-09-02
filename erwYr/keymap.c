@@ -33,12 +33,12 @@ enum custom_keycodes {
 
 
 
-#define DUAL_FUNC_0 LT(6, KC_W)
-#define DUAL_FUNC_1 LT(2, KC_7)
-#define DUAL_FUNC_2 LT(15, KC_O)
-#define DUAL_FUNC_3 LT(11, KC_F21)
-#define DUAL_FUNC_4 LT(15, KC_L)
-#define DUAL_FUNC_5 LT(1, KC_Z)
+#define DUAL_FUNC_0 LT(5, KC_O)
+#define DUAL_FUNC_1 LT(6, KC_D)
+#define DUAL_FUNC_2 LT(12, KC_4)
+#define DUAL_FUNC_3 LT(1, KC_F13)
+#define DUAL_FUNC_4 LT(12, KC_F9)
+#define DUAL_FUNC_5 LT(1, KC_F2)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
@@ -193,7 +193,7 @@ const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM = LAYOUT(
   'L', 'L', 'L', 'L', 'L', 'L', 'R', 'R', 'R', 'R', 'R', 'R', 
   'L', 'L', 'L', 'L', 'L', 'L', 'R', 'R', 'R', 'R', 'R', 'R', 
   'L', 'L', 'L', 'L', 'L', 'L', 'R', 'R', 'R', 'R', 'R', 'R', 
-  '*', '*', '*', '*'
+  'L', 'L', 'R', 'R'
 );
 
 const uint16_t PROGMEM combo0[] = { KC_7, KC_4, COMBO_END};
@@ -239,39 +239,39 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
         case MT(MOD_LCTL, KC_R):
             return TAPPING_TERM -60;
         case MT(MOD_LALT, KC_N):
-            return TAPPING_TERM -150;
+            return TAPPING_TERM -60;
         case MT(MOD_LGUI, KC_T):
-            return TAPPING_TERM -150;
+            return TAPPING_TERM -60;
         case KC_W:
             return TAPPING_TERM -160;
         case KC_Y:
             return TAPPING_TERM -160;
         case MT(MOD_RGUI, KC_C):
-            return TAPPING_TERM -150;
+            return TAPPING_TERM -60;
         case MT(MOD_RALT, KC_A):
-            return TAPPING_TERM -150;
+            return TAPPING_TERM -60;
         case MT(MOD_RCTL, KC_E):
             return TAPPING_TERM -60;
         case KC_I:
             return TAPPING_TERM -60;
         case MT(MOD_RCTL, KC_8):
-            return TAPPING_TERM -100;
+            return TAPPING_TERM -10;
         case MT(MOD_RALT, KC_5):
-            return TAPPING_TERM -150;
+            return TAPPING_TERM -10;
         case MT(MOD_RGUI, KC_2):
-            return TAPPING_TERM -150;
+            return TAPPING_TERM -10;
         case DUAL_FUNC_0:
-            return TAPPING_TERM -100;
+            return TAPPING_TERM -60;
         case DUAL_FUNC_1:
-            return TAPPING_TERM -150;
+            return TAPPING_TERM -60;
         case DUAL_FUNC_2:
-            return TAPPING_TERM -150;
+            return TAPPING_TERM -60;
         case DUAL_FUNC_3:
-            return TAPPING_TERM -150;
+            return TAPPING_TERM -60;
         case DUAL_FUNC_4:
-            return TAPPING_TERM -150;
+            return TAPPING_TERM -60;
         case DUAL_FUNC_5:
-            return TAPPING_TERM -100;
+            return TAPPING_TERM -60;
         default:
             return TAPPING_TERM;
     }
