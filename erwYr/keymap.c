@@ -32,12 +32,12 @@ enum custom_keycodes {
 
 
 
-#define DUAL_FUNC_0 LT(13, KC_L)
-#define DUAL_FUNC_1 LT(8, KC_F22)
-#define DUAL_FUNC_2 LT(14, KC_U)
-#define DUAL_FUNC_3 LT(8, KC_G)
-#define DUAL_FUNC_4 LT(6, KC_Y)
-#define DUAL_FUNC_5 LT(9, KC_F11)
+#define DUAL_FUNC_0 LT(8, KC_W)
+#define DUAL_FUNC_1 LT(2, KC_1)
+#define DUAL_FUNC_2 LT(14, KC_F18)
+#define DUAL_FUNC_3 LT(5, KC_F4)
+#define DUAL_FUNC_4 LT(11, KC_F19)
+#define DUAL_FUNC_5 LT(10, KC_0)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
@@ -105,7 +105,7 @@ combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo0, KC_BSPC),
     COMBO(combo1, KC_BSPC),
     COMBO(combo2, KC_SCLN),
-    COMBO(combo3, KC_QUOTE),
+    COMBO(combo3, KC_DQUO),
     COMBO(combo4, OSM(MOD_HYPR)),
     COMBO(combo5, OSM(MOD_MEH)),
     COMBO(combo6, KC_TAB),
@@ -116,7 +116,7 @@ combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo11, KC_DOT),
     COMBO(combo12, KC_COMMA),
     COMBO(combo13, KC_COLN),
-    COMBO(combo14, KC_DQUO),
+    COMBO(combo14, KC_QUOTE),
 };
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
