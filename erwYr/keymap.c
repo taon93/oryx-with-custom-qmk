@@ -34,12 +34,12 @@ enum custom_keycodes {
 
 
 
-#define DUAL_FUNC_0 LT(2, KC_9)
-#define DUAL_FUNC_1 LT(4, KC_F5)
-#define DUAL_FUNC_2 LT(6, KC_X)
-#define DUAL_FUNC_3 LT(15, KC_K)
-#define DUAL_FUNC_4 LT(10, KC_N)
-#define DUAL_FUNC_5 LT(14, KC_9)
+#define DUAL_FUNC_0 LT(3, KC_7)
+#define DUAL_FUNC_1 LT(14, KC_9)
+#define DUAL_FUNC_2 LT(3, KC_F14)
+#define DUAL_FUNC_3 LT(4, KC_F23)
+#define DUAL_FUNC_4 LT(6, KC_2)
+#define DUAL_FUNC_5 LT(5, KC_M)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
@@ -90,43 +90,37 @@ const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM = LAYOUT(
 const uint16_t PROGMEM combo0[] = { KC_7, KC_4, COMBO_END};
 const uint16_t PROGMEM combo1[] = { KC_X, KC_M, COMBO_END};
 const uint16_t PROGMEM combo2[] = { KC_Z, KC_J, COMBO_END};
-const uint16_t PROGMEM combo3[] = { KC_F, KC_O, COMBO_END};
-const uint16_t PROGMEM combo4[] = { KC_H, KC_K, KC_L, COMBO_END};
-const uint16_t PROGMEM combo5[] = { KC_M, KC_D, COMBO_END};
-const uint16_t PROGMEM combo6[] = { KC_L, KC_H, COMBO_END};
-const uint16_t PROGMEM combo7[] = { MT(MOD_RGUI, KC_C), MT(MOD_RCTL, KC_E), MT(MOD_RALT, KC_A), COMBO_END};
-const uint16_t PROGMEM combo8[] = { MT(MOD_LCTL, KC_R), MT(MOD_LALT, KC_N), MT(MOD_LGUI, KC_T), COMBO_END};
-const uint16_t PROGMEM combo9[] = { OSM(MOD_LSFT), KC_SPACE, COMBO_END};
-const uint16_t PROGMEM combo10[] = { OSL(2), OSL(1), COMBO_END};
-const uint16_t PROGMEM combo11[] = { MT(MOD_RGUI, KC_C), MT(MOD_RALT, KC_A), COMBO_END};
-const uint16_t PROGMEM combo12[] = { MT(MOD_RALT, KC_A), MT(MOD_RCTL, KC_E), COMBO_END};
-const uint16_t PROGMEM combo13[] = { KC_G, KC_Z, COMBO_END};
-const uint16_t PROGMEM combo14[] = { KC_O, KC_U, COMBO_END};
-const uint16_t PROGMEM combo15[] = { KC_TILD, KC_PIPE, COMBO_END};
-const uint16_t PROGMEM combo16[] = { MT(MOD_LALT, KC_N), MT(MOD_LGUI, KC_T), COMBO_END};
-const uint16_t PROGMEM combo17[] = { MT(MOD_LCTL, KC_R), MT(MOD_LALT, KC_N), COMBO_END};
-const uint16_t PROGMEM combo18[] = { KC_H, KC_K, COMBO_END};
+const uint16_t PROGMEM combo3[] = { KC_H, KC_K, KC_L, COMBO_END};
+const uint16_t PROGMEM combo4[] = { KC_G, KC_Z, COMBO_END};
+const uint16_t PROGMEM combo5[] = { KC_L, KC_H, COMBO_END};
+const uint16_t PROGMEM combo6[] = { MT(MOD_RGUI, KC_C), MT(MOD_RCTL, KC_E), MT(MOD_RALT, KC_A), COMBO_END};
+const uint16_t PROGMEM combo7[] = { MT(MOD_LCTL, KC_R), MT(MOD_LALT, KC_N), MT(MOD_LGUI, KC_T), COMBO_END};
+const uint16_t PROGMEM combo8[] = { OSM(MOD_LSFT), KC_SPACE, COMBO_END};
+const uint16_t PROGMEM combo9[] = { OSL(2), OSL(1), COMBO_END};
+const uint16_t PROGMEM combo10[] = { MT(MOD_RGUI, KC_C), MT(MOD_RALT, KC_A), COMBO_END};
+const uint16_t PROGMEM combo11[] = { KC_M, KC_D, COMBO_END};
+const uint16_t PROGMEM combo12[] = { KC_TILD, KC_PIPE, COMBO_END};
+const uint16_t PROGMEM combo13[] = { MT(MOD_LALT, KC_N), MT(MOD_LGUI, KC_T), COMBO_END};
+const uint16_t PROGMEM combo14[] = { KC_F, KC_O, COMBO_END};
+const uint16_t PROGMEM combo15[] = { KC_H, KC_K, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo0, KC_BSPC),
     COMBO(combo1, KC_BSPC),
     COMBO(combo2, KC_SCLN),
-    COMBO(combo3, KC_DQUO),
-    COMBO(combo4, OSM(MOD_HYPR)),
-    COMBO(combo5, OSM(MOD_MEH)),
-    COMBO(combo6, KC_TAB),
-    COMBO(combo7, LGUI(LCTL(KC_Q))),
-    COMBO(combo8, CW_TOGG),
-    COMBO(combo9, OSL(4)),
-    COMBO(combo10, OSL(3)),
-    COMBO(combo11, KC_DOT),
-    COMBO(combo12, KC_COMMA),
-    COMBO(combo13, KC_COLN),
-    COMBO(combo14, KC_QUOTE),
-    COMBO(combo15, KC_BSPC),
-    COMBO(combo16, KC_ENTER),
-    COMBO(combo17, KC_ESCAPE),
-    COMBO(combo18, OSM(MOD_LALT)),
+    COMBO(combo3, OSM(MOD_HYPR)),
+    COMBO(combo4, OSM(MOD_MEH)),
+    COMBO(combo5, KC_TAB),
+    COMBO(combo6, LGUI(LCTL(KC_Q))),
+    COMBO(combo7, CW_TOGG),
+    COMBO(combo8, OSL(4)),
+    COMBO(combo9, OSL(3)),
+    COMBO(combo10, KC_DOT),
+    COMBO(combo11, KC_QUOTE),
+    COMBO(combo12, KC_BSPC),
+    COMBO(combo13, KC_ENTER),
+    COMBO(combo14, KC_ESCAPE),
+    COMBO(combo15, OSM(MOD_LALT)),
 };
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
