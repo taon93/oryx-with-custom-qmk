@@ -212,8 +212,8 @@ const uint16_t PROGMEM combo11[] = { KC_M, KC_D, COMBO_END};
 const uint16_t PROGMEM combo12[] = { KC_TILD, KC_PIPE, COMBO_END};
 const uint16_t PROGMEM combo13[] = { MT(MOD_LALT, KC_N), MT(MOD_LGUI, KC_T), COMBO_END};
 const uint16_t PROGMEM combo14[] = { KC_F, KC_O, COMBO_END};
-const uint16_t PROGMEM combo15[] = { KC_F, KC_O, KC_U, COMBO_END};
-const uint16_t PROGMEM combo16[] = { KC_N, KC_T, COMBO_END};
+const uint16_t PROGMEM combo15[] = { KC_H, KC_K, COMBO_END};
+const uint16_t PROGMEM combo16[] = { KC_F, KC_O, KC_U, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo0, KC_BSPC),
