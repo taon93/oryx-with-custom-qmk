@@ -198,7 +198,8 @@ const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM = LAYOUT(
   'L', 'L', 'L', 'L', 'L', 'L', 'R', 'R', 'R', 'R', 'R', 'R', 
   'L', 'L', 'R', 'R'
 );
-
+COMBO_COUNT += 1;
+const uint16_t PROGMEM repeat[] = { KC_F, KC_O, KC_U, COMBO_END};
 const uint16_t PROGMEM combo0[] = { KC_7, KC_4, COMBO_END};
 const uint16_t PROGMEM combo1[] = { KC_X, KC_M, COMBO_END};
 const uint16_t PROGMEM combo2[] = { KC_Z, KC_J, COMBO_END};
@@ -220,6 +221,7 @@ const uint16_t PROGMEM combo17[] = { KC_9, KC_6, COMBO_END};
 const uint16_t PROGMEM combo18[] = { LALT(LGUI(KC_V)), LGUI(KC_V), COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
+    COMBO(repeat, QK_REP),
     COMBO(combo0, KC_BSPC),
     COMBO(combo1, KC_BSPC),
     COMBO(combo2, KC_SCLN),
