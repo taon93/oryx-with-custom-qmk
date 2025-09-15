@@ -220,8 +220,7 @@ const uint16_t PROGMEM combo16[] = { MT(MOD_RALT, KC_5), MT(MOD_RGUI, KC_2), COM
 const uint16_t PROGMEM combo17[] = { KC_9, KC_6, COMBO_END};
 const uint16_t PROGMEM combo18[] = { LALT(LGUI(KC_V)), LGUI(KC_V), COMBO_END};
 
-const uint16_t COMBO_COUNT = COMBO_COUNT + 1;
-combo_t key_combos[COMBO_COUNT] = {
+combo_t key_combos[COMBO_COUNT + MY_COMBO_COUNT] = {
     COMBO(repeat, QK_REP),
     COMBO(combo0, KC_BSPC),
     COMBO(combo1, KC_BSPC),

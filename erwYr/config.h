@@ -21,6 +21,8 @@
 
 #define SERIAL_NUMBER "erwYr/0WLdrw"
 #define LAYER_STATE_8BIT
+
+#define MY_COMBO_COUNT 1
 #define COMBO_COUNT 19
 
 #define TAPPING_TERM_PER_KEY
