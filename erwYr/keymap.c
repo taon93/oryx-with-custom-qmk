@@ -75,17 +75,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 const key_override_t delete_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_BSPC, KC_DEL);
-const key_override_t layer_1_enter_override = ko_make_basic(MOD_MASK_GUI, OSL(1), KC_ENTER);
-const key_override_t layer_2_enter_override = ko_make_basic(MOD_MASK_GUI, OSL(2), KC_ENTER);
-const key_override_t layer_1_backspace_override = ko_make_basic(MOD_MASK_CTRL, OSL(1), KC_BSPC);
-const key_override_t layer_2_backspace_override = ko_make_basic(MOD_MASK_CTRL, OSL(2), KC_BSPC);
-const key_override_t layer_1_escape_override = ko_make_basic(MOD_MASK_ALT, OSL(1), KC_ESCAPE);
-const key_override_t layer_2_escape_override = ko_make_basic(MOD_MASK_ALT, OSL(2), KC_ESCAPE);
 const key_override_t caps_lock_ctrl_override = ko_make_basic(MOD_MASK_CTRL, CW_TOGG, KC_CAPS);
 
-const key_override_t layer_0_enter_override = ko_make_basic(MOD_MASK_GUI, TO(0), KC_ENTER);
-const key_override_t layer_0_backspace_override = ko_make_basic(MOD_MASK_CTRL,TO(0), KC_BSPC);
-const key_override_t layer_0_escape_override = ko_make_basic(MOD_MASK_ALT, TO(0), KC_ESCAPE);
 const key_override_t next_track_override =
     ko_make_with_layers_negmods_and_options(
        MOD_MASK_CTRL,       // Trigger modifiers: ctrl
@@ -105,21 +96,12 @@ const key_override_t brightness_up_override = ko_make_with_layers_negmods_and_op
 const key_override_t brightness_down_override = ko_make_basic(MOD_MASK_CSA, KC_MPLY, KC_BRID);
 // Shifted symbols
 const key_override_t perc_circ_override     = ko_make_basic(MOD_MASK_SHIFT, KC_PERC, KC_CIRC);
-const key_override_t comma_dot_override     = ko_make_basic(MOD_MASK_SHIFT, KC_DOT, KC_COMM);
-const key_override_t lprn_labk_override    = ko_make_basic(MOD_MASK_SHIFT, KC_LPRN, KC_LABK);
-const key_override_t rprn_rabk_override    = ko_make_basic(MOD_MASK_SHIFT, KC_RPRN, KC_RABK);
-const key_override_t lcurly_lbrc_override   = ko_make_basic(MOD_MASK_SHIFT, KC_LCBR, KC_LBRC);
-const key_override_t rcurly_rbrc_override   = ko_make_basic(MOD_MASK_SHIFT, KC_RCBR, KC_RBRC);
-const key_override_t grave_tilde_override   = ko_make_basic(MOD_MASK_SHIFT, KC_GRV, KC_TILD);
+const key_override_t square_bracket_override    = ko_make_basic(MOD_MASK_SHIFT, KC_RPRN, KC_RABK);
+const key_override_t parentheses_override    = ko_make_basic(MOD_MASK_SHIFT, KC_RPRN, KC_RABK);
+const key_override_t curly_bracket_override   = ko_make_basic(MOD_MASK_SHIFT, KC_LCBR, KC_RCBR);
+const key_override_t abk_override   = ko_make_basic(MOD_MASK_SHIFT, KC_LCBR, KC_LBRC);
 const key_override_t slash_bslash_override  = ko_make_basic(MOD_MASK_SHIFT, KC_SLSH, KC_BSLS);
-const key_override_t amp_pipe_override      = ko_make_basic(MOD_MASK_SHIFT, KC_AMPR, KC_PIPE);
-const key_override_t ques_excl_override     = ko_make_basic(MOD_MASK_SHIFT, KC_QUES, KC_EXLM);
-const key_override_t sc_col_override        = ko_make_basic(MOD_MASK_SHIFT, KC_SCLN, KC_COLN);
-const key_override_t at_hash_override       = ko_make_basic(MOD_MASK_SHIFT, KC_AT, KC_HASH);
-const key_override_t minus_astr_override    = ko_make_basic(MOD_MASK_SHIFT, KC_MINS, KC_ASTR);
 const key_override_t under_dollar_override  = ko_make_basic(MOD_MASK_SHIFT, KC_UNDS, KC_DLR);
-const key_override_t eq_plus_override       = ko_make_basic(MOD_MASK_SHIFT, KC_EQL, KC_PLUS);
-const key_override_t quot_dquot_override    = ko_make_basic(MOD_MASK_SHIFT, KC_QUOT, KC_DQUO);
 
 const key_override_t one_f1_override    = ko_make_basic(MOD_MASK_SHIFT, KC_1, KC_F1);
 const key_override_t two_f2_override    = ko_make_basic(MOD_MASK_SHIFT, KC_2, KC_F2);
@@ -144,22 +126,13 @@ const key_override_t *key_overrides[] = {
     &brightness_up_override,
     &brightness_down_override,
 
-    &comma_dot_override,
     &perc_circ_override,
-    &lprn_labk_override,
-    &rprn_rabk_override,
-    &lcurly_lbrc_override,
-    &rcurly_rbrc_override,
-    &grave_tilde_override,
+    &square_bracket_override,
+    &parentheses_override,
+    &curly_bracket_override,
+    &abk_override,
     &slash_bslash_override,
-    &amp_pipe_override,
-    &ques_excl_override,
-    &sc_col_override,
-    &at_hash_override,
-    &minus_astr_override,
     &under_dollar_override,
-    &eq_plus_override,
-    &quot_dquot_override,
 
     &one_f1_override,
     &two_f2_override,
@@ -171,17 +144,6 @@ const key_override_t *key_overrides[] = {
     &eight_f8_override,
     &nine_f9_override,
     &zero_f10_override,
-
-    &layer_1_enter_override,
-    &layer_2_enter_override,
-    &layer_1_backspace_override,
-    &layer_2_backspace_override,
-    &layer_1_escape_override,
-    &layer_2_escape_override,
-
-    &layer_0_escape_override,
-    &layer_0_backspace_override,
-    &layer_0_enter_override
 };
 
 const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM = LAYOUT(
