@@ -95,13 +95,13 @@ const key_override_t brightness_up_override = ko_make_with_layers_negmods_and_op
                                       KC_BRIU, ~0, MOD_MASK_SHIFT, ko_option_no_reregister_trigger);
 const key_override_t brightness_down_override = ko_make_basic(MOD_MASK_CSA, KC_MPLY, KC_BRID);
 // Shifted symbols
-const key_override_t perc_circ_override     = ko_make_basic(MOD_MASK_SHIFT, KC_PERC, KC_CIRC);
-const key_override_t square_bracket_override    = ko_make_basic(MOD_MASK_SHIFT, KC_RPRN, KC_RABK);
-const key_override_t parentheses_override    = ko_make_basic(MOD_MASK_SHIFT, KC_RPRN, KC_RABK);
-const key_override_t curly_bracket_override   = ko_make_basic(MOD_MASK_SHIFT, KC_LCBR, KC_RCBR);
-const key_override_t quot_dquot_override    = ko_make_basic(MOD_MASK_SHIFT, KC_QUOT, KC_DQUO);
-const key_override_t sc_col_override        = ko_make_basic(MOD_MASK_SHIFT, KC_SCLN, KC_COLN);
-const key_override_t slash_bslash_override  = ko_make_basic(MOD_MASK_SHIFT, KC_SLSH, KC_BSLS);
+const key_override_t square_bracket_override    = ko_make_basic(MOD_MASK_SHIFT, KC_LBRC, KC_RBRC);
+const key_override_t parentheses_override       = ko_make_basic(MOD_MASK_SHIFT, KC_LPRN, KC_RPRN);
+const key_override_t curly_bracket_override     = ko_make_basic(MOD_MASK_SHIFT, KC_LCBR, KC_RCBR);
+const key_override_t abk_override               = ko_make_basic(MOD_MASK_SHIFT, KC_LABK, KC_RABK);
+const key_override_t quot_dquot_override        = ko_make_basic(MOD_MASK_SHIFT, KC_QUOT, KC_DQUO);
+const key_override_t sc_col_override            = ko_make_basic(MOD_MASK_SHIFT, KC_SCLN, KC_COLN);
+const key_override_t slash_bslash_override      = ko_make_basic(MOD_MASK_SHIFT, KC_SLSH, KC_BSLS);
 
 const key_override_t one_f1_override    = ko_make_basic(MOD_MASK_SHIFT, KC_1, KC_F1);
 const key_override_t two_f2_override    = ko_make_basic(MOD_MASK_SHIFT, KC_2, KC_F2);
@@ -112,7 +112,7 @@ const key_override_t six_f6_override    = ko_make_basic(MOD_MASK_SHIFT, KC_6, KC
 const key_override_t seven_f7_override  = ko_make_basic(MOD_MASK_SHIFT, KC_7, KC_F7);
 const key_override_t eight_f8_override  = ko_make_basic(MOD_MASK_SHIFT, KC_8, KC_F8);
 const key_override_t nine_f9_override   = ko_make_basic(MOD_MASK_SHIFT, KC_9, KC_F9);
-const key_override_t zero_f10_override   = ko_make_basic(MOD_MASK_SHIFT, KC_0, KC_F10);
+const key_override_t zero_f10_override  = ko_make_basic(MOD_MASK_SHIFT, KC_0, KC_F10);
 
 const key_override_t *key_overrides[] = {
     &delete_key_override,
@@ -126,10 +126,10 @@ const key_override_t *key_overrides[] = {
     &brightness_up_override,
     &brightness_down_override,
 
-    &perc_circ_override,
     &square_bracket_override,
     &parentheses_override,
     &curly_bracket_override,
+    &abk_override,
     &slash_bslash_override,
     &quot_dquot_override,
     &sc_col_override,
