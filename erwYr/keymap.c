@@ -130,9 +130,7 @@ const key_override_t *key_overrides[] = {
     &square_bracket_override,
     &parentheses_override,
     &curly_bracket_override,
-    &abk_override,
     &slash_bslash_override,
-    &under_dollar_override,
     &quot_dquot_override,
     &sc_col_override,
 
