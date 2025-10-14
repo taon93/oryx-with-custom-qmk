@@ -157,23 +157,28 @@ const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM = LAYOUT(
 );
 
 const uint16_t PROGMEM repeat[] = { KC_F, KC_O, COMBO_END};
+
 const uint16_t PROGMEM combo0[] = { KC_H, KC_K, KC_L, COMBO_END};
 const uint16_t PROGMEM combo1[] = { KC_L, KC_H, COMBO_END};
 const uint16_t PROGMEM combo2[] = { OSM(MOD_LSFT), KC_SPACE, COMBO_END};
 const uint16_t PROGMEM combo3[] = { OSL(2), OSL(1), COMBO_END};
 const uint16_t PROGMEM combo4[] = { KC_H, KC_K, COMBO_END};
-const uint16_t PROGMEM combo5[] = { KC_N, KC_T, COMBO_END};
-const uint16_t PROGMEM combo6[] = { KC_C, KC_A, COMBO_END};
-const uint16_t PROGMEM combo7[] = { MT(MOD_RGUI, KC_G), MT(MOD_RALT, KC_Z), COMBO_END};
-const uint16_t PROGMEM combo8[] = { MT(MOD_LALT, KC_M), MT(MOD_LGUI, KC_D), COMBO_END};
-const uint16_t PROGMEM combo9[] = { MT(MOD_LCTL, KC_X), MT(MOD_LALT, KC_M), COMBO_END};
-const uint16_t PROGMEM combo10[] = { KC_C, KC_A, KC_E, COMBO_END};
-const uint16_t PROGMEM combo11[] = { KC_R, KC_N, KC_T, COMBO_END};
-const uint16_t PROGMEM combo12[] = { OSM(MOD_LALT), OSM(MOD_LCTL), COMBO_END};
-const uint16_t PROGMEM combo13[] = { KC_LCBR, KC_DLR, COMBO_END};
-const uint16_t PROGMEM combo14[] = { KC_UNDS, KC_LPRN, COMBO_END};
-const uint16_t PROGMEM combo15[] = { KC_SLASH, KC_PERC, COMBO_END};
-const uint16_t PROGMEM combo16[] = { MT(MOD_LCTL, KC_3), MT(MOD_LALT, KC_2), COMBO_END};
+const uint16_t PROGMEM combo5[] = { KC_9, KC_6, COMBO_END};
+const uint16_t PROGMEM combo6[] = { KC_N, KC_T, COMBO_END};
+const uint16_t PROGMEM combo7[] = { KC_C, KC_A, COMBO_END};
+const uint16_t PROGMEM combo8[] = { MT(MOD_RGUI, KC_G), MT(MOD_RALT, KC_Z), COMBO_END};
+const uint16_t PROGMEM combo9[] = { MT(MOD_LALT, KC_M), MT(MOD_LGUI, KC_D), COMBO_END};
+const uint16_t PROGMEM combo10[] = { MT(MOD_LCTL, KC_X), MT(MOD_LALT, KC_M), COMBO_END};
+const uint16_t PROGMEM combo11[] = { KC_C, KC_A, KC_E, COMBO_END};
+const uint16_t PROGMEM combo12[] = { KC_R, KC_N, KC_T, COMBO_END};
+const uint16_t PROGMEM combo13[] = { KC_5, KC_2, COMBO_END};
+const uint16_t PROGMEM combo14[] = { KC_6, KC_3, COMBO_END};
+const uint16_t PROGMEM combo15[] = { MT(MOD_LCTL, KC_7), MT(MOD_LALT, KC_4), COMBO_END};
+const uint16_t PROGMEM combo16[] = { OSM(MOD_LALT), OSM(MOD_LCTL), COMBO_END};
+const uint16_t PROGMEM combo17[] = { KC_LCBR, KC_DLR, COMBO_END};
+const uint16_t PROGMEM combo18[] = { KC_AMPR, KC_GRAVE, COMBO_END};
+const uint16_t PROGMEM combo19[] = { KC_UNDS, KC_LPRN, COMBO_END};
+const uint16_t PROGMEM combo20[] = { KC_SLASH, KC_PERC, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT + MY_COMBO_COUNT] = {
     COMBO(repeat, QK_REP),
@@ -182,18 +187,22 @@ combo_t key_combos[COMBO_COUNT + MY_COMBO_COUNT] = {
     COMBO(combo2, OSL(4)),
     COMBO(combo3, OSL(3)),
     COMBO(combo4, KC_ESCAPE),
-    COMBO(combo5, KC_ENTER),
-    COMBO(combo6, KC_DOT),
-    COMBO(combo7, KC_COMMA),
-    COMBO(combo8, OSM(MOD_MEH)),
-    COMBO(combo9, KC_BSPC),
-    COMBO(combo10, LGUI(LCTL(KC_Q))),
-    COMBO(combo11, CW_TOGG),
-    COMBO(combo12, KC_BSPC),
+    COMBO(combo5, KC_TAB),
+    COMBO(combo6, KC_ENTER),
+    COMBO(combo7, KC_DOT),
+    COMBO(combo8, KC_COMMA),
+    COMBO(combo9, OSM(MOD_MEH)),
+    COMBO(combo10, KC_BSPC),
+    COMBO(combo11, LGUI(LCTL(KC_Q))),
+    COMBO(combo12, CW_TOGG),
     COMBO(combo13, KC_ENTER),
-    COMBO(combo14, KC_DOT),
-    COMBO(combo15, KC_COMMA),
+    COMBO(combo14, KC_ESCAPE),
+    COMBO(combo15, KC_BSPC),
     COMBO(combo16, KC_BSPC),
+    COMBO(combo17, KC_ENTER),
+    COMBO(combo18, KC_TAB),
+    COMBO(combo19, KC_DOT),
+    COMBO(combo20, KC_COMMA),
 };
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
