@@ -116,6 +116,16 @@ const key_override_t eight_f8_override  = ko_make_basic(MOD_MASK_SHIFT, KC_8, KC
 const key_override_t nine_f9_override   = ko_make_basic(MOD_MASK_SHIFT, KC_9, KC_F9);
 const key_override_t zero_f10_override  = ko_make_basic(MOD_MASK_SHIFT, KC_0, KC_F10);
 
+// Key override to disable caps word overrides for '-'
+const key_override_t minus_not_override    = ko_make_basic(MOD_MASK_SHIFT, KC_MINUS, KC_MINUS);
+
+const key_override_t parentheses_override       = ko_make_basic(MOD_MASK_SHIFT, KC_LPRN, KC_RPRN);
+const key_override_t curly_bracket_override     = ko_make_basic(MOD_MASK_SHIFT, KC_LCBR, KC_RCBR);
+const key_override_t abk_override               = ko_make_basic(MOD_MASK_SHIFT, KC_LABK, KC_RABK);
+const key_override_t quot_dquot_override        = ko_make_basic(MOD_MASK_SHIFT, KC_QUOT, KC_DQUO);
+const key_override_t sc_col_override            = ko_make_basic(MOD_MASK_SHIFT, KC_SCLN, KC_COLN);
+const key_override_t slash_bslash_override      = ko_make_basic(MOD_MASK_SHIFT, KC_SLSH, KC_BSLS);
+
 const key_override_t *key_overrides[] = {
     &delete_key_override,
 
@@ -146,6 +156,7 @@ const key_override_t *key_overrides[] = {
     &eight_f8_override,
     &nine_f9_override,
     &zero_f10_override,
+    &minus_not_override,
 };
 
 const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM = LAYOUT(
