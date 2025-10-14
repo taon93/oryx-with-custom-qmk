@@ -21,7 +21,7 @@
 
 #define SERIAL_NUMBER "erwYr/3va7JB"
 #define LAYER_STATE_8BIT
-#define COMBO_COUNT 21
+#define COMBO_COUNT 20
 
 #define MY_COMBO_COUNT 1
 
