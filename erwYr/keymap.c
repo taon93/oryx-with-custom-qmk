@@ -20,23 +20,6 @@ enum custom_keycodes {
   ST_MACRO_10,
   ST_MACRO_11,
   ST_MACRO_12,
-  ST_MACRO_13,
-  ST_MACRO_14,
-  ST_MACRO_15,
-  ST_MACRO_16,
-  ST_MACRO_17,
-  ST_MACRO_18,
-  ST_MACRO_19,
-  ST_MACRO_20,
-  ST_MACRO_21,
-  ST_MACRO_22,
-  ST_MACRO_23,
-  ST_MACRO_24,
-  ST_MACRO_25,
-  ST_MACRO_26,
-  ST_MACRO_27,
-  ST_MACRO_28,
-  ST_MACRO_29,
 };
 
 
@@ -48,7 +31,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TRANSPARENT, KC_TRANSPARENT, KC_L,           KC_H,           KC_K,           KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_F,           KC_O,           KC_U,           KC_TRANSPARENT, KC_TRANSPARENT, 
     KC_TRANSPARENT, KC_S,           KC_R,           KC_N,           KC_T,           KC_W,                                           KC_Y,           KC_C,           KC_A,           KC_E,           KC_I,           KC_TRANSPARENT, 
     KC_TRANSPARENT, KC_V,           MT(MOD_LCTL, KC_X),MT(MOD_LALT, KC_M),MT(MOD_LGUI, KC_D),KC_B,                                           KC_P,           MT(MOD_RGUI, KC_G),MT(MOD_RALT, KC_Z),MT(MOD_RCTL, KC_J),KC_Q,           KC_TRANSPARENT, 
-                                                    OSL(2),         OSM(MOD_LSFT),                                  KC_SPACE,       OSL(1)
+                                                    OSL(1),         KC_SPACE,                                       OSM(MOD_LSFT),  OSL(2)
   ),
   [1] = LAYOUT_voyager(
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
@@ -60,23 +43,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [2] = LAYOUT_voyager(
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
     KC_TRANSPARENT, KC_TRANSPARENT, KC_AMPR,        KC_GRAVE,       KC_ASTR,        KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_MINUS,       KC_TILD,        KC_PIPE,        KC_TRANSPARENT, KC_TRANSPARENT, 
-    KC_TRANSPARENT, KC_HASH,        KC_LBRC,        KC_LCBR,        KC_DLR,         KC_EXLM,                                        KC_QUES,        KC_UNDS,        KC_LPRN,        KC_LABK,        KC_AT,          KC_TRANSPARENT, 
-    KC_TRANSPARENT, KC_TRANSPARENT, OSM(MOD_LCTL),  OSM(MOD_LALT),  OSM(MOD_LGUI),  KC_PLUS,                                        KC_EQUAL,       KC_SLASH,       KC_PERC,        KC_CIRC,        KC_TRANSPARENT, KC_TRANSPARENT, 
-                                                    TO(0),          KC_TRANSPARENT,                                 KC_SCLN,        KC_QUOTE
+    KC_TRANSPARENT, KC_HASH,        KC_LCBR,        KC_LPRN,        KC_DLR,         KC_EXLM,                                        KC_QUES,        KC_UNDS,        KC_RPRN,        KC_RCBR,        KC_AT,          KC_TRANSPARENT,
+    KC_TRANSPARENT, KC_PERC,        KC_LBRC,        KC_LABK,        MT(MOD_RGUI, KC_SLASH),KC_PLUS,                                        KC_EQUAL,       MT(MOD_LGUI, KC_BSLS),KC_RABK,        KC_RBRC,        KC_CIRC,        KC_TRANSPARENT,
+                                                    KC_QUOTE,       KC_DQUO,                                        KC_TRANSPARENT, TO(0)
   ),
   [3] = LAYOUT_voyager(
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
-    KC_TRANSPARENT, KC_TRANSPARENT, ST_MACRO_0,     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, ST_MACRO_6,     ST_MACRO_7,     ST_MACRO_8,     KC_TRANSPARENT, KC_TRANSPARENT, 
-    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, ST_MACRO_1,     ST_MACRO_2,     ST_MACRO_3,                                     KC_TRANSPARENT, ST_MACRO_9,     ST_MACRO_10,    ST_MACRO_11,    KC_TRANSPARENT, KC_TRANSPARENT, 
-    KC_TRANSPARENT, KC_TRANSPARENT, ST_MACRO_4,     ST_MACRO_5,     KC_TRANSPARENT, KC_TRANSPARENT,                                 ST_MACRO_12,    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, ST_MACRO_13,    KC_TRANSPARENT, 
+    KC_TRANSPARENT, KC_TRANSPARENT, ST_MACRO_0,     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, ST_MACRO_5,     ST_MACRO_6,     ST_MACRO_7,     KC_TRANSPARENT, KC_TRANSPARENT,
+    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, ST_MACRO_1,     ST_MACRO_2,     ST_MACRO_3,                                     KC_TRANSPARENT, ST_MACRO_8,     ST_MACRO_9,     ST_MACRO_10,    KC_TRANSPARENT, KC_TRANSPARENT,
+    KC_TRANSPARENT, KC_TRANSPARENT, ST_MACRO_4,     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 ST_MACRO_11,    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, ST_MACRO_12,    KC_TRANSPARENT,
                                                     TO(0),          KC_TRANSPARENT,                                 KC_TRANSPARENT, TO(0)
-  ),
-  [4] = LAYOUT_voyager(
-    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
-    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, ST_MACRO_20,    ST_MACRO_21,    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
-    KC_TRANSPARENT, ST_MACRO_14,    ST_MACRO_15,    ST_MACRO_16,    ST_MACRO_17,    KC_TRANSPARENT,                                 ST_MACRO_22,    ST_MACRO_23,    ST_MACRO_24,    ST_MACRO_25,    ST_MACRO_26,    KC_TRANSPARENT, 
-    KC_TRANSPARENT, ST_MACRO_18,    KC_TRANSPARENT, KC_TRANSPARENT, ST_MACRO_19,    KC_TRANSPARENT,                                 ST_MACRO_27,    ST_MACRO_28,    ST_MACRO_29,    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
-                                                    KC_TRANSPARENT, TO(0),                                          TO(0),          KC_TRANSPARENT
   ),
 };
 
@@ -165,50 +141,49 @@ const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM = LAYOUT(
 );
 
 const uint16_t PROGMEM repeat[] = { KC_F, KC_O, COMBO_END};
-
-const uint16_t PROGMEM combo0[] = { KC_H, KC_K, KC_L, COMBO_END};
-const uint16_t PROGMEM combo1[] = { KC_L, KC_H, COMBO_END};
-const uint16_t PROGMEM combo2[] = { OSM(MOD_LSFT), KC_SPACE, COMBO_END};
-const uint16_t PROGMEM combo3[] = { OSL(2), OSL(1), COMBO_END};
-const uint16_t PROGMEM combo4[] = { KC_H, KC_K, COMBO_END};
-const uint16_t PROGMEM combo5[] = { KC_N, KC_T, COMBO_END};
-const uint16_t PROGMEM combo6[] = { KC_C, KC_A, COMBO_END};
-const uint16_t PROGMEM combo7[] = { MT(MOD_RGUI, KC_G), MT(MOD_RALT, KC_Z), COMBO_END};
-const uint16_t PROGMEM combo8[] = { MT(MOD_LALT, KC_M), MT(MOD_LGUI, KC_D), COMBO_END};
-const uint16_t PROGMEM combo9[] = { MT(MOD_LCTL, KC_X), MT(MOD_LALT, KC_M), COMBO_END};
-const uint16_t PROGMEM combo10[] = { KC_C, KC_A, KC_E, COMBO_END};
-const uint16_t PROGMEM combo11[] = { KC_R, KC_N, KC_T, COMBO_END};
-const uint16_t PROGMEM combo12[] = { OSM(MOD_LALT), OSM(MOD_LCTL), COMBO_END};
-const uint16_t PROGMEM combo13[] = { KC_LCBR, KC_DLR, COMBO_END};
-const uint16_t PROGMEM combo14[] = { KC_UNDS, KC_LPRN, COMBO_END};
-const uint16_t PROGMEM combo15[] = { KC_SLASH, KC_PERC, COMBO_END};
+const uint16_t PROGMEM combo0[] = { KC_L, KC_H, COMBO_END};
+const uint16_t PROGMEM combo1[] = { OSL(1), OSL(2), COMBO_END};
+const uint16_t PROGMEM combo2[] = { KC_H, KC_K, COMBO_END};
+const uint16_t PROGMEM combo3[] = { KC_N, KC_T, COMBO_END};
+const uint16_t PROGMEM combo4[] = { KC_C, KC_A, KC_E, COMBO_END};
+const uint16_t PROGMEM combo5[] = { KC_R, KC_N, KC_T, COMBO_END};
+const uint16_t PROGMEM combo6[] = { KC_5, KC_4, COMBO_END};
+const uint16_t PROGMEM combo7[] = { KC_9, KC_8, COMBO_END};
+const uint16_t PROGMEM combo8[] = { KC_F, KC_O, COMBO_END};
+const uint16_t PROGMEM combo9[] = { KC_SPACE, OSM(MOD_LSFT), COMBO_END};
+const uint16_t PROGMEM combo10[] = { KC_C, KC_A, COMBO_END};
+const uint16_t PROGMEM combo11[] = { MT(MOD_RGUI, KC_G), MT(MOD_RALT, KC_Z), COMBO_END};
+const uint16_t PROGMEM combo12[] = { KC_A, KC_E, COMBO_END};
+const uint16_t PROGMEM combo13[] = { MT(MOD_RALT, KC_Z), MT(MOD_RCTL, KC_J), COMBO_END};
+const uint16_t PROGMEM combo14[] = { MT(MOD_LALT, KC_M), MT(MOD_LGUI, KC_D), COMBO_END};
+const uint16_t PROGMEM combo15[] = { KC_F, KC_O, COMBO_END};
 const uint16_t PROGMEM combo16[] = { MT(MOD_LCTL, KC_3), MT(MOD_LALT, KC_2), COMBO_END};
-const uint16_t PROGMEM combo17[] = { MT(MOD_LCTL, KC_3), MT(MOD_LALT, KC_2), COMBO_END};
-const uint16_t PROGMEM combo18[] = { KC_5, KC_4, COMBO_END};
-const uint16_t PROGMEM combo19[] = { KC_9, KC_8, COMBO_END};
+const uint16_t PROGMEM combo17[] = { KC_LEFT, KC_DOWN, COMBO_END};
+const uint16_t PROGMEM combo18[] = { OSM(MOD_RGUI), OSM(MOD_RALT), COMBO_END};
+const uint16_t PROGMEM combo19[] = { MT(MOD_LCTL, KC_X), MT(MOD_LALT, KC_M), COMBO_END};
 
 combo_t key_combos[COMBO_COUNT + MY_COMBO_COUNT] = {
     COMBO(repeat, QK_REP),
-    COMBO(combo0, OSM(MOD_HYPR)),
-    COMBO(combo1, KC_TAB),
-    COMBO(combo2, OSL(4)),
-    COMBO(combo3, OSL(3)),
-    COMBO(combo4, KC_ESCAPE),
-    COMBO(combo5, KC_ENTER),
-    COMBO(combo6, KC_DOT),
-    COMBO(combo7, KC_COMMA),
-    COMBO(combo8, OSM(MOD_MEH)),
-    COMBO(combo9, KC_BSPC),
-    COMBO(combo10, LGUI(LCTL(KC_Q))),
-    COMBO(combo11, CW_TOGG),
-    COMBO(combo12, KC_BSPC),
-    COMBO(combo13, KC_ENTER),
-    COMBO(combo14, KC_DOT),
-    COMBO(combo15, KC_COMMA),
+    COMBO(combo0, KC_TAB),
+    COMBO(combo1, OSL(3)),
+    COMBO(combo2, KC_ESCAPE),
+    COMBO(combo3, KC_ENTER),
+    COMBO(combo4, LGUI(LCTL(KC_Q))),
+    COMBO(combo5, CW_TOGG),
+    COMBO(combo6, KC_ENTER),
+    COMBO(combo7, KC_TAB),
+    COMBO(combo8, OSM(MOD_HYPR)),
+    COMBO(combo9, OSM(MOD_LALT)),
+    COMBO(combo10, KC_DOT),
+    COMBO(combo11, KC_COMMA),
+    COMBO(combo12, KC_COLN),
+    COMBO(combo13, KC_SCLN),
+    COMBO(combo14, OSM(MOD_MEH)),
+    COMBO(combo15, KC_HYPR),
     COMBO(combo16, KC_BSPC),
-    COMBO(combo17, KC_BSPC),
-    COMBO(combo18, KC_ENTER),
-    COMBO(combo19, KC_TAB),
+    COMBO(combo17, KC_DOT),
+    COMBO(combo18, KC_COMMA),
+    COMBO(combo19, KC_BSPC),
 };
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
@@ -257,11 +232,11 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
             return TAPPING_TERM -60;
         case MT(MOD_LGUI, KC_1):
             return TAPPING_TERM -60;
-        case KC_UNDS:
-            return TAPPING_TERM -60;
         case KC_LPRN:
             return TAPPING_TERM -110;
-        case KC_LABK:
+        case KC_UNDS:
+            return TAPPING_TERM -60;
+        case KC_RCBR:
             return TAPPING_TERM -60;
         default:
             return TAPPING_TERM;
@@ -368,127 +343,42 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     break;
     case ST_MACRO_5:
     if (record->event.pressed) {
-      SEND_STRING(SS_TAP(X_M)SS_DELAY(10)  SS_TAP(X_A)SS_DELAY(10)  SS_TAP(X_C)SS_DELAY(10)  SS_TAP(X_I)SS_DELAY(10)  SS_TAP(X_E)SS_DELAY(10)  SS_TAP(X_J)SS_DELAY(10)  SS_TAP(X_DOT)SS_DELAY(10)  SS_TAP(X_N)SS_DELAY(10)  SS_TAP(X_A)SS_DELAY(10)  SS_TAP(X_B)SS_DELAY(10)  SS_TAP(X_I)SS_DELAY(10)  SS_TAP(X_A)SS_DELAY(10)  SS_TAP(X_L)SS_DELAY(10)  SS_TAP(X_E)SS_DELAY(10)  SS_TAP(X_K)SS_DELAY(10)  SS_LSFT(SS_TAP(X_2))SS_DELAY(10)  SS_TAP(X_I)SS_DELAY(10)  SS_TAP(X_B)SS_DELAY(10)  SS_TAP(X_M)SS_DELAY(10)  SS_TAP(X_DOT)SS_DELAY(10)  SS_TAP(X_C)SS_DELAY(10)  SS_TAP(X_O)SS_DELAY(10)  SS_TAP(X_M));
+      SEND_STRING(SS_TAP(X_B)SS_DELAY(10)  SS_TAP(X_M)SS_DELAY(10)  SS_LSFT(SS_TAP(X_MINUS))SS_DELAY(10)  SS_TAP(X_F)SS_DELAY(10)  SS_TAP(X_I)SS_DELAY(10)  SS_TAP(X_L)SS_DELAY(10)  SS_TAP(X_E)SS_DELAY(10)  SS_TAP(X_S)  SS_DELAY(10) SS_TAP(X_ENTER));
     }
     break;
     case ST_MACRO_6:
     if (record->event.pressed) {
-      SEND_STRING(SS_TAP(X_B)SS_DELAY(10)  SS_TAP(X_M)SS_DELAY(10)  SS_LSFT(SS_TAP(X_MINUS))SS_DELAY(10)  SS_TAP(X_F)SS_DELAY(10)  SS_TAP(X_I)SS_DELAY(10)  SS_TAP(X_L)SS_DELAY(10)  SS_TAP(X_E)SS_DELAY(10)  SS_TAP(X_S)  SS_DELAY(10) SS_TAP(X_ENTER));
+      SEND_STRING(SS_TAP(X_B)SS_DELAY(10)  SS_TAP(X_M)SS_DELAY(10)  SS_LSFT(SS_TAP(X_MINUS))SS_DELAY(10)  SS_TAP(X_D)SS_DELAY(10)  SS_TAP(X_I)SS_DELAY(10)  SS_TAP(X_R)SS_DELAY(10)  SS_TAP(X_S)  SS_DELAY(10) SS_TAP(X_ENTER));
     }
     break;
     case ST_MACRO_7:
     if (record->event.pressed) {
-      SEND_STRING(SS_TAP(X_B)SS_DELAY(10)  SS_TAP(X_M)SS_DELAY(10)  SS_LSFT(SS_TAP(X_MINUS))SS_DELAY(10)  SS_TAP(X_D)SS_DELAY(10)  SS_TAP(X_I)SS_DELAY(10)  SS_TAP(X_R)SS_DELAY(10)  SS_TAP(X_S)  SS_DELAY(10) SS_TAP(X_ENTER));
+      SEND_STRING(SS_TAP(X_B)SS_DELAY(10)  SS_TAP(X_M)SS_DELAY(10)  SS_LSFT(SS_TAP(X_MINUS))SS_DELAY(10)  SS_TAP(X_S)SS_DELAY(10)  SS_TAP(X_C)SS_DELAY(10)  SS_TAP(X_R)SS_DELAY(10)  SS_TAP(X_I)SS_DELAY(10)  SS_TAP(X_P)SS_DELAY(10)  SS_TAP(X_T)SS_DELAY(10)  SS_TAP(X_S)  SS_DELAY(10) SS_TAP(X_ENTER));
     }
     break;
     case ST_MACRO_8:
     if (record->event.pressed) {
-      SEND_STRING(SS_TAP(X_B)SS_DELAY(10)  SS_TAP(X_M)SS_DELAY(10)  SS_LSFT(SS_TAP(X_MINUS))SS_DELAY(10)  SS_TAP(X_S)SS_DELAY(10)  SS_TAP(X_C)SS_DELAY(10)  SS_TAP(X_R)SS_DELAY(10)  SS_TAP(X_I)SS_DELAY(10)  SS_TAP(X_P)SS_DELAY(10)  SS_TAP(X_T)SS_DELAY(10)  SS_TAP(X_S)  SS_DELAY(10) SS_TAP(X_ENTER));
+      SEND_STRING(SS_TAP(X_DOT)SS_DELAY(10)  SS_TAP(X_C)SS_DELAY(10)  SS_TAP(X_O)SS_DELAY(10)  SS_TAP(X_M)SS_DELAY(10)  SS_TAP(X_ENTER));
     }
     break;
     case ST_MACRO_9:
     if (record->event.pressed) {
-      SEND_STRING(SS_TAP(X_DOT)SS_DELAY(10)  SS_TAP(X_C)SS_DELAY(10)  SS_TAP(X_O)SS_DELAY(10)  SS_TAP(X_M)SS_DELAY(10)  SS_TAP(X_ENTER));
+      SEND_STRING(SS_TAP(X_SPACE)SS_DELAY(5)  SS_TAP(X_MINUS)SS_DELAY(5)  SS_LSFT(SS_TAP(X_DOT))SS_DELAY(5)  SS_TAP(X_SPACE));
     }
     break;
     case ST_MACRO_10:
     if (record->event.pressed) {
-      SEND_STRING(SS_TAP(X_SPACE)SS_DELAY(5)  SS_TAP(X_MINUS)SS_DELAY(5)  SS_LSFT(SS_TAP(X_DOT))SS_DELAY(5)  SS_TAP(X_SPACE));
+      SEND_STRING(SS_LGUI(SS_TAP(X_C))SS_DELAY(5)  SS_TAP(X_SPACE)SS_DELAY(5)  SS_LSFT(SS_TAP(X_9))SS_DELAY(5)  SS_LGUI(SS_TAP(X_V))SS_DELAY(5)  SS_LSFT(SS_TAP(X_0)));
     }
     break;
     case ST_MACRO_11:
     if (record->event.pressed) {
-      SEND_STRING(SS_LGUI(SS_TAP(X_C))SS_DELAY(5)  SS_TAP(X_SPACE)SS_DELAY(5)  SS_LSFT(SS_TAP(X_9))SS_DELAY(5)  SS_LGUI(SS_TAP(X_V))SS_DELAY(5)  SS_LSFT(SS_TAP(X_0)));
+      SEND_STRING(SS_LSFT(SS_RGUI(SS_TAP(X_4))));
     }
     break;
     case ST_MACRO_12:
     if (record->event.pressed) {
-      SEND_STRING(SS_LSFT(SS_RGUI(SS_TAP(X_4))));
-    }
-    break;
-    case ST_MACRO_13:
-    if (record->event.pressed) {
       SEND_STRING(SS_TAP(X_ESCAPE)SS_DELAY(10)  SS_LSFT(SS_TAP(X_SCLN))SS_DELAY(10)  SS_TAP(X_Q)SS_DELAY(10)  SS_LSFT(SS_TAP(X_1))SS_DELAY(10)  SS_TAP(X_ENTER));
-    }
-    break;
-    case ST_MACRO_14:
-    if (record->event.pressed) {
-      SEND_STRING(SS_LSFT(SS_TAP(X_S))SS_DELAY(20)  SS_TAP(X_T)SS_DELAY(20)  SS_TAP(X_R)SS_DELAY(20)  SS_TAP(X_I)SS_DELAY(20)  SS_TAP(X_N)SS_DELAY(20)  SS_TAP(X_G)SS_DELAY(20)  SS_TAP(X_SPACE));
-    }
-    break;
-    case ST_MACRO_15:
-    if (record->event.pressed) {
-      SEND_STRING(SS_TAP(X_R)SS_DELAY(20)  SS_TAP(X_E)SS_DELAY(20)  SS_TAP(X_T)SS_DELAY(20)  SS_TAP(X_U)SS_DELAY(20)  SS_TAP(X_R)SS_DELAY(20)  SS_TAP(X_N)SS_DELAY(20)  SS_TAP(X_SPACE));
-    }
-    break;
-    case ST_MACRO_16:
-    if (record->event.pressed) {
-      SEND_STRING(SS_TAP(X_T)SS_DELAY(20)  SS_TAP(X_R)SS_DELAY(20)  SS_TAP(X_Y)SS_DELAY(20)  SS_TAP(X_SPACE)SS_DELAY(20)  SS_RSFT(SS_TAP(X_LBRC))SS_DELAY(20)  SS_TAP(X_ENTER)SS_DELAY(20)  SS_TAP(X_ENTER)SS_DELAY(20)  SS_LALT(SS_RSFT(SS_TAP(X_RIGHT)))SS_DELAY(20)  SS_TAP(X_SPACE)SS_DELAY(20)  SS_TAP(X_C)SS_DELAY(20)  SS_TAP(X_A)SS_DELAY(20)  SS_TAP(X_T)SS_DELAY(20)  SS_TAP(X_C)SS_DELAY(20)  SS_TAP(X_H)SS_DELAY(20)  SS_TAP(X_SPACE)SS_DELAY(20)  SS_RSFT(SS_TAP(X_LBRC))SS_DELAY(20)  SS_TAP(X_ENTER)SS_DELAY(20)  SS_TAP(X_UP)SS_DELAY(20)  SS_TAP(X_UP)  SS_DELAY(20) SS_TAP(X_ENTER));
-    }
-    break;
-    case ST_MACRO_17:
-    if (record->event.pressed) {
-      SEND_STRING(SS_TAP(X_T)SS_DELAY(5)  SS_TAP(X_H)SS_DELAY(5)  SS_TAP(X_I)SS_DELAY(5)  SS_TAP(X_S)SS_DELAY(5)  SS_TAP(X_DOT));
-    }
-    break;
-    case ST_MACRO_18:
-    if (record->event.pressed) {
-      SEND_STRING(SS_TAP(X_V)SS_DELAY(20)  SS_TAP(X_O)SS_DELAY(20)  SS_TAP(X_I)SS_DELAY(20)  SS_TAP(X_D)SS_DELAY(20)  SS_TAP(X_SPACE));
-    }
-    break;
-    case ST_MACRO_19:
-    if (record->event.pressed) {
-      SEND_STRING(SS_TAP(X_S)SS_DELAY(5)  SS_TAP(X_U)SS_DELAY(5)  SS_TAP(X_P)SS_DELAY(5)  SS_TAP(X_E)SS_DELAY(5)  SS_TAP(X_R)SS_DELAY(5)  SS_TAP(X_DOT));
-    }
-    break;
-    case ST_MACRO_20:
-    if (record->event.pressed) {
-      SEND_STRING(SS_TAP(X_F)SS_DELAY(20)  SS_TAP(X_I)SS_DELAY(20)  SS_TAP(X_N)SS_DELAY(20)  SS_TAP(X_A)SS_DELAY(20)  SS_TAP(X_L)SS_DELAY(20)  SS_TAP(X_SPACE));
-    }
-    break;
-    case ST_MACRO_21:
-    if (record->event.pressed) {
-      SEND_STRING(SS_TAP(X_S)SS_DELAY(20)  SS_TAP(X_T)SS_DELAY(20)  SS_TAP(X_A)SS_DELAY(20)  SS_TAP(X_T)SS_DELAY(20)  SS_TAP(X_I)SS_DELAY(20)  SS_TAP(X_C)SS_DELAY(20)  SS_TAP(X_SPACE));
-    }
-    break;
-    case ST_MACRO_22:
-    if (record->event.pressed) {
-      SEND_STRING(SS_TAP(X_I)SS_DELAY(20)  SS_TAP(X_N)SS_DELAY(20)  SS_TAP(X_T)SS_DELAY(20)  SS_TAP(X_E)SS_DELAY(20)  SS_TAP(X_R)SS_DELAY(20)  SS_TAP(X_F)SS_DELAY(20)  SS_TAP(X_A)SS_DELAY(20)  SS_TAP(X_C)SS_DELAY(20)  SS_TAP(X_E)SS_DELAY(20)  SS_TAP(X_SPACE));
-    }
-    break;
-    case ST_MACRO_23:
-    if (record->event.pressed) {
-      SEND_STRING(SS_TAP(X_C)SS_DELAY(10)  SS_TAP(X_L)SS_DELAY(10)  SS_TAP(X_A)SS_DELAY(10)  SS_TAP(X_S)SS_DELAY(10)  SS_TAP(X_S)SS_DELAY(10)  SS_TAP(X_SPACE));
-    }
-    break;
-    case ST_MACRO_24:
-    if (record->event.pressed) {
-      SEND_STRING(SS_TAP(X_A)SS_DELAY(20)  SS_TAP(X_B)SS_DELAY(20)  SS_TAP(X_S)SS_DELAY(20)  SS_TAP(X_T)SS_DELAY(20)  SS_TAP(X_R)SS_DELAY(20)  SS_TAP(X_A)SS_DELAY(20)  SS_TAP(X_C)SS_DELAY(20)  SS_TAP(X_T)SS_DELAY(20)  SS_TAP(X_SPACE));
-    }
-    break;
-    case ST_MACRO_25:
-    if (record->event.pressed) {
-      SEND_STRING(SS_TAP(X_E)SS_DELAY(20)  SS_TAP(X_X)SS_DELAY(20)  SS_TAP(X_T)SS_DELAY(20)  SS_TAP(X_E)SS_DELAY(20)  SS_TAP(X_N)SS_DELAY(20)  SS_TAP(X_D)SS_DELAY(20)  SS_TAP(X_S)SS_DELAY(20)  SS_TAP(X_SPACE));
-    }
-    break;
-    case ST_MACRO_26:
-    if (record->event.pressed) {
-      SEND_STRING(SS_TAP(X_I)SS_DELAY(20)  SS_TAP(X_M)SS_DELAY(20)  SS_TAP(X_P)SS_DELAY(20)  SS_TAP(X_L)SS_DELAY(20)  SS_TAP(X_E)SS_DELAY(20)  SS_TAP(X_M)SS_DELAY(20)  SS_TAP(X_E)SS_DELAY(20)  SS_TAP(X_N)SS_DELAY(20)  SS_TAP(X_T)SS_DELAY(20)  SS_TAP(X_S)SS_DELAY(20)  SS_TAP(X_SPACE));
-    }
-    break;
-    case ST_MACRO_27:
-    if (record->event.pressed) {
-      SEND_STRING(SS_TAP(X_P)SS_DELAY(20)  SS_TAP(X_R)SS_DELAY(20)  SS_TAP(X_I)SS_DELAY(20)  SS_TAP(X_V)SS_DELAY(20)  SS_TAP(X_A)SS_DELAY(20)  SS_TAP(X_T)SS_DELAY(20)  SS_TAP(X_E));
-    }
-    break;
-    case ST_MACRO_28:
-    if (record->event.pressed) {
-      SEND_STRING(SS_TAP(X_P)SS_DELAY(20)  SS_TAP(X_R)SS_DELAY(20)  SS_TAP(X_O)SS_DELAY(20)  SS_TAP(X_T)SS_DELAY(20)  SS_TAP(X_E)SS_DELAY(20)  SS_TAP(X_C)SS_DELAY(20)  SS_TAP(X_T)SS_DELAY(20)  SS_TAP(X_E)SS_DELAY(20)  SS_TAP(X_D)SS_DELAY(20)  SS_TAP(X_SPACE));
-    }
-    break;
-    case ST_MACRO_29:
-    if (record->event.pressed) {
-      SEND_STRING(SS_TAP(X_P)SS_DELAY(20)  SS_TAP(X_U)SS_DELAY(20)  SS_TAP(X_B)SS_DELAY(20)  SS_TAP(X_L)SS_DELAY(20)  SS_TAP(X_I)SS_DELAY(20)  SS_TAP(X_C)SS_DELAY(20)  SS_TAP(X_SPACE));
     }
     break;
 
